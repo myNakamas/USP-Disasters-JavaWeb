@@ -1,0 +1,14 @@
+.wrapper{
+    width : 80%;
+    background-color : paleturquoise;
+    border-radius: 10px;
+}
+
+body{
+    background-color: aquamarine;
+}
+
+h2{
+    color : darkmagenta;
+    text-align: center;
+}

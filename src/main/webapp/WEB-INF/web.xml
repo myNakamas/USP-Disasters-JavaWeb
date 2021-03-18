@@ -9,6 +9,16 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>hello-servlet</servlet-name>
-        <url-pattern>/*</url-pattern>
+        <url-pattern>/hello</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>home-servlet</servlet-name>
+        <servlet-class>servlets.HomeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>home-servlet</servlet-name>
+        <url-pattern>/home</url-pattern>
+    </servlet-mapping>
+
 </web-app>

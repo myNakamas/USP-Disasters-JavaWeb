@@ -31,8 +31,8 @@ public class HomeServlet extends HttpServlet {
 //            System.out.println(defaultApp.getName());
 
         request.setAttribute("events", events);
-        RequestDispatcher view = request.getRequestDispatcher("HomePage.jsp");
-      //  view.forward(request, response);
+        RequestDispatcher view = request.getRequestDispatcher("html/HomePage.jsp");
+        view.forward(request, response);
 
     }
 
