@@ -19,14 +19,14 @@ public class HelloServlet extends HttpServlet {
         // To display something on the Screen you either
 
         //Write your HTML code like this:
-        PrintWriter out = response.getWriter();
-        out.println("<html><body>This works");
-        out.println("</body></html>");
+      //  PrintWriter out = response.getWriter();
+    //    out.println("<html><body>This works");
+ //       out.println("</body></html>");
 
         //or, dispatch to an existing resource (servlet, jsp etc.) (called forwarding to a view)
         //forwarding will not change the URL
-//        RequestDispatcher view = request.getRequestDispatcher("index.jsp");
-//        view.forward(request, response);
+        RequestDispatcher view = request.getRequestDispatcher("../webapp/html/superSpiro.jsp");
+        view.forward(request, response);
 
         //while on the other hand, you can just redirect the user.
         //this changes the URL
