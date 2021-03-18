@@ -2,6 +2,6 @@
 
 Supposedly to be a site displaying disaster info
 
-Using itellij and tomcat S, html
+Using itellij and tomcat S, html, java
 
 [This is our trello](https://trello.com/b/YHFwvVXq/disaster-upravlenie-na-proekti)
