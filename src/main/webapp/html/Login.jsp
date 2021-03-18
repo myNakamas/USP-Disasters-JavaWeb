@@ -11,6 +11,15 @@
     <title>Title</title>
 </head>
 <body>
+<form method="post">
+    <label>
+        <input name="username" type="text" placeholder="username">
+    </label>
+    <label>
+        <input name="password" type="password" placeholder="password">
+    </label>
+    <input type="submit">
+</form>
 
 </body>
 </html>

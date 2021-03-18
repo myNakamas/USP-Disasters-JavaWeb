@@ -8,13 +8,5 @@
 <body>
 <!--Todo: make it good looking? -->
 
-<div class = "wrapper">
-    <c:forEach items = "${events}" var = "event">
-        <div class="event-wrap">
-            <h2>${event}</h2>
-        </div>
-    </c:forEach>
-
-</div>
 </body>
 </html>
