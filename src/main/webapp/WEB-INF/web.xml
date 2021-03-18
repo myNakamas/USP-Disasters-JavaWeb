@@ -5,10 +5,10 @@
          version="4.0">
     <servlet>
         <servlet-name>hello-servlet</servlet-name>
-        <servlet-class>servlets.HelloServlet</servlet-class>
+        <jsp-file>/html/index.jsp</jsp-file>
     </servlet>
     <servlet-mapping>
         <servlet-name>hello-servlet</servlet-name>
-        <url-pattern>/*</url-pattern>
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
 </web-app>
