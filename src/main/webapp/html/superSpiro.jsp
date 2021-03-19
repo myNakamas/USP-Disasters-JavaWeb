@@ -5,13 +5,15 @@
   Time: 14:09
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
     <title>For Spiro We Live</title>
+    <link rel="stylesheet" href="CSS/css.css" type="text/css">
+
 </head>
 <body>
     <label>My name is Spiro...SUPER spiro</label>
-    <h6 color = "RED">My name is Spiro...SUPER spiro</h6>
+    <h6 style="color: red">My name is Spiro...SUPER spiro</h6>
 </body>
 </html>

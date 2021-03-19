@@ -5,10 +5,12 @@
   Time: 22:13
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" href="CSS/css.css" type="text/css">
+
 </head>
 <body>
 

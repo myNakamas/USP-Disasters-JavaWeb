@@ -4,12 +4,12 @@
 <html>
 <head>
     <title>JSP - Hello World</title>
-    <link rel="stylesheet" href="indexCSS.css">
+    <link rel="stylesheet" href="CSS/css.css" type="text/css">
 </head>
 <body>
     <nav class="navigation-bar">
         <ul>
-            <h1>USP-Disasters</h1>
+            <li><h1>USP-Disasters</h1></li>
             <li class="menu-item">
                 <a href="${pageContext.request.contextPath}/Login">Login</a>
             </li>

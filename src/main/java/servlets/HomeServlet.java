@@ -24,16 +24,15 @@ public class HomeServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-            events = ApiPredictHQ.basicSearch();
-
-        request.setAttribute("events", events);
-        RequestDispatcher view = request.getRequestDispatcher("HomePage.jsp");
-      //  view.forward(request, response);
+          //  events = ApiPredictHQ.basicSearch();
+        response.setContentType("text/html");
+        RequestDispatcher view = request.getRequestDispatcher("html/index.jsp");
+        view.forward(request, response);
 
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
 
     }
 }
