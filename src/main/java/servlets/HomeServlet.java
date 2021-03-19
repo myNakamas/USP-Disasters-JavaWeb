@@ -26,10 +26,6 @@ public class HomeServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
             events = ApiPredictHQ.basicSearch();
 
-//            FirebaseConfig.Config();
-//            FirebaseApp defaultApp = FirebaseApp.initializeApp();
-//            System.out.println(defaultApp.getName());
-
         request.setAttribute("events", events);
         RequestDispatcher view = request.getRequestDispatcher("HomePage.jsp");
       //  view.forward(request, response);

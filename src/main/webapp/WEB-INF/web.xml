@@ -7,8 +7,26 @@
         <servlet-name>hello-servlet</servlet-name>
         <jsp-file>/html/index.jsp</jsp-file>
     </servlet>
+
     <servlet-mapping>
         <servlet-name>hello-servlet</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>Login-servlet</servlet-name>
+        <servlet-class>servlets.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Login-servlet</servlet-name>
+        <url-pattern>/Login</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Register-servlet</servlet-name>
+        <servlet-class>servlets.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Register-servlet</servlet-name>
+        <url-pattern>/Register</url-pattern>
+    </servlet-mapping>
+
 </web-app>

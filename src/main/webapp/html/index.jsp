@@ -4,11 +4,20 @@
 <html>
 <head>
     <title>JSP - Hello World</title>
+    <link rel="stylesheet" href="indexCSS.css">
 </head>
 <body>
-
-    <h1><%= "Hello World!" %>
-    </h1>
+    <nav class="navigation-bar">
+        <ul>
+            <h1>USP-Disasters</h1>
+            <li class="menu-item">
+                <a href="${pageContext.request.contextPath}/Login">Login</a>
+            </li>
+            <li class="menu-item">
+                <a href="${pageContext.request.contextPath}/Register">Register</a>
+            </li>
+        </ul>
+    </nav>
     <br/>
 </body>
 </html>
