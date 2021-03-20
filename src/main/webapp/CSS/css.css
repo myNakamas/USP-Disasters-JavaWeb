@@ -1,15 +1,30 @@
 :root {
-    --first-color: #d7dae1;
+    --base-color: #d7dae1;
     --second-color:  #EE8448;
+    --anti-color: #171718;
 }
 .menu-item{
 
 }
 body{
-    background-color:var(--first-color);
+    background-color:var(--base-color);
     margin:0;
     font-family: "Roboto Light", serif;
 }
+.header-text {
+    text-align: center;
+}
+
+.login-left {
+    border-right: 1px solid var(--anti-color);
+}
+
+.box-border-down {
+    display: flex;
+    border-bottom: 1px solid var(--anti-color);
+}
+
+label {}
 
 
 

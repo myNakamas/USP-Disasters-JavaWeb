@@ -19,22 +19,22 @@
     <div class="box-border-down">
         <div class="login-left">
             <form method="post" action="${pageContext.request.contextPath}/Login">
-                <label>
-                    <input class="textbox" name="username" type="text" placeholder="username">
+                <label class="textbox">
+                    <input name="username" type="text" placeholder="username">
                 </label>
-                <label>
-                    <input class="textbox" name="password" type="password" placeholder="password">
+                <label class="textbox">
+                    <input name="password" type="password" placeholder="password">
                 </label>
                 <input class="btn" type="submit" value="Log in">
             </form>
-            <div class="login-right">
-                <button class="btn">
+        </div>
+        <div class="login-right">
+            <button class="btn">
 
-                </button>
-                <button class="btn">
+            </button>
+            <button class="btn">
 
-                </button>
-            </div>
+            </button>
         </div>
     </div>
 </div>
