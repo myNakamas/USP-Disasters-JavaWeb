@@ -1,30 +1,43 @@
 :root {
     --base-color: #d7dae1;
     --second-color:  #EE8448;
+    --third-color: #c86432;
     --anti-color: #171718;
+
 }
 .menu-item{
 
 }
 body{
-    background-color:var(--base-color);
-    margin:0;
-    font-family: "Roboto Light", serif;
-}
-.header-text {
-    text-align: center;
+    background-color:var(--anti-color);
+    color : var(--base-color);;
+    margin : 0;
 }
 
-.login-left {
-    border-right: 1px solid var(--anti-color);
+.button {
+    max-height: 40px;
+    max-width: 130px;
+    background-color:var(--third-color);
+    border-radius: 10px;
+    border : 3px var(--second-color) solid ;
+    color : var(--base-color);
+    margin : 30px 10px 30px 10px;
 }
 
-.box-border-down {
-    display: flex;
-    border-bottom: 1px solid var(--anti-color);
+.button :hover {
+    max-height: 40px;
+    max-width: 130px;
+    background-color:var(--second-color);
+    border-radius: 10px;
+    border : 3px var(--third-color) solid ;
+    color : var(--anti-color);
+    margin : 30px 10px 30px 10px;
 }
 
-label {}
+.navigation-bar{
+    max-height: 70px;
+    border-bottom: 2px white solid;
+}
 
 
 

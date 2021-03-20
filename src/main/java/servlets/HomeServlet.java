@@ -25,7 +25,7 @@ public class HomeServlet extends HttpServlet {
         HttpSession session = request.getSession();
         session.setAttribute("events",events);
         response.setContentType("text/html");
-        RequestDispatcher view = request.getRequestDispatcher("html/index.jsp");
+        RequestDispatcher view = request.getRequestDispatcher("html/Home.jsp");
         view.forward(request, response);
 
     }

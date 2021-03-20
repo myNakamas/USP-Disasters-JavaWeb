@@ -10,18 +10,14 @@
 </head>
 <body>
 <%--    <%=session.getAttribute("events")%>--%>
-
     <nav class="navigation-bar">
-        <ul>
-            <li><h1>USP-Disasters</h1></li>
-            <li class="menu-item">
-                <a href="${pageContext.request.contextPath}/Login">Login</a>
-            </li>
-            <li class="menu-item">
-                <a href="${pageContext.request.contextPath}/Register">Register</a>
-            </li>
-        </ul>
+        <dev style = " display: inline-block; width : 85%; text-align: center;">
+        <h1>Disaster information</h1>
+        </dev>
+        <dev style = " display: inline-block; width : 25%; alignment: right; ">
+        <a href="${pageContext.request.contextPath}/Login" class = "button" >⚰Log in</a>
+            <a href="${pageContext.request.contextPath}/Register" class = "button" >Sign up</a>
+        </dev>
     </nav>
-    <br/>
 </body>
 </html>
