@@ -1,0 +1,112 @@
+:root {
+    --base-color: #d7dae1;
+    --second-color:  #cd6e39;
+    --third-color: #c86432;
+    --anti-color: #171718;
+    --second-color-dark: #ba5c44;
+}
+body{
+    background-color:var(--anti-color);
+    margin:0;
+    color:var(--base-color);
+    font-family: system-ui, serif;
+}
+a{
+    text-decoration:none;
+    font-size: inherit;
+    font-weight: bold;
+    color:var(--base-color);
+}
+.login-left {
+    border-right: 1px solid var(--base-color);
+    margin: 0 0 0 auto;
+}
+.login-right {
+    margin: 1px auto 0 0;
+}
+.login-left,.login-right {
+    width: 30%;
+    padding: 5% 0;
+}
+
+.button {
+    height: 30px;
+    width: 130px;
+    margin:20px;
+    background-color:var(--third-color);
+    border-radius: 10px;
+    border : 3px var(--second-color) solid;
+    /*color : var(--base-color);*/
+}
+
+.button:hover {
+    background-color: var(--second-color);
+    border: 3px var(--third-color) solid;
+}
+.box-border-down {
+    display: flex;
+    border-bottom: 1px solid var(--base-color);
+    margin-bottom: 5%;
+}
+
+.textbox {
+    padding: 15px 50px 15px 10px;
+    margin: 2% 10%;
+    background-color: #C4C4C4;
+    border-radius: 10px;
+    border: none;
+}
+.btn {
+    text-decoration:none;
+    background-color: var(--second-color);
+    border-radius: 10px;
+    border: none;
+    padding: 20px 50px;
+    color: var(--base-color);
+    font-size: inherit;
+    font-weight: bold;
+}
+.btn:hover{
+    cursor:pointer;
+    background-color: var(--second-color-dark)
+}
+.wrapper {
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+}
+h1.header-text {
+    margin: 5% 0 0 0;
+    display: inline-block;
+    padding: 20px 10%;
+    border-bottom: 1px solid var(--base-color);
+}
+h1.header-title {
+    margin: 15px 0;
+    position: fixed;
+    left: 40%;
+}
+.nav-right{
+    display: inline-flex;
+    float: right;
+}
+.horizontal-flex-buttons{
+    display: flex;
+    margin: 0 12.5%;
+}
+.vertical-btn {
+    display: block;
+    margin: 30px auto;
+}
+.flex-btn {
+    flex: 1;
+    margin: 20px;
+}
+
+.navigation-bar{
+    height: 70px;
+    border-bottom: 2px white solid;
+    position: fixed;
+    width: 100%;
+    text-align: center;
+}

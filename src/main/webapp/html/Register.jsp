@@ -9,13 +9,13 @@
 <html>
 <head>
     <title>Title</title>
-    <link rel="stylesheet" href="CSS/css.css" type="text/css">
+    <link rel="stylesheet" href="web-resources/CSS/css.css" type="text/css">
 
 </head>
 <body>
 <%--dynamic including--%>
 
-<jsp:include page='superSpiro.jsp'>
+<jsp:include page='components/superSpiro.jsp'>
     <jsp:param name="Event" value="This is the first event "/>
 </jsp:include>      <%-- We can pass different parameters like this, so it will be easier to work--%>
 
