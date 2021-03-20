@@ -13,15 +13,30 @@
 
 </head>
 <body>
-<form method="post">
-    <label>
-        <input name="username" type="text" placeholder="username">
-    </label>
-    <label>
-        <input name="password" type="password" placeholder="password">
-    </label>
-    <input type="submit">
-</form>
+<div class="wrapper">
+    <h1 class="header-text">Log in</h1>
 
+    <div class="box-border-down">
+        <div class="login-left">
+            <form method="post" action="${pageContext.request.contextPath}/Login">
+                <label>
+                    <input class="textbox" name="username" type="text" placeholder="username">
+                </label>
+                <label>
+                    <input class="textbox" name="password" type="password" placeholder="password">
+                </label>
+                <input class="btn" type="submit" value="Log in">
+            </form>
+            <div class="login-right">
+                <button class="btn">
+
+                </button>
+                <button class="btn">
+
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

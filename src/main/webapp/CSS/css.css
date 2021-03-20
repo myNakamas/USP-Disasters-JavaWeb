@@ -1,6 +1,15 @@
+:root {
+    --first-color: #d7dae1;
+    --second-color:  #EE8448;
+}
 .menu-item{
-    background-color: #e78585;
+
 }
 body{
-    background-color:aquamarine;
+    background-color:var(--first-color);
+    margin:0;
+    font-family: "Roboto Light", serif;
 }
+
+
+

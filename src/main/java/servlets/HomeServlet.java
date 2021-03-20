@@ -1,9 +1,7 @@
 package servlets;
 
-import com.google.firebase.FirebaseApp;
 import json.ApiPredictHQ;
-import json.models.Result;
-import json.FirebaseConfig;
+import models.Result;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -19,12 +17,13 @@ public class HomeServlet extends HttpServlet {
     public void init() throws ServletException {
         super.init();
         //this is absolutely not professional. but its what i know so far.
-
+        events = ApiPredictHQ.basicSearch();
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-          //  events = ApiPredictHQ.basicSearch();
+        HttpSession session = request.getSession();
+        session.setAttribute("events",events);
         response.setContentType("text/html");
         RequestDispatcher view = request.getRequestDispatcher("html/index.jsp");
         view.forward(request, response);

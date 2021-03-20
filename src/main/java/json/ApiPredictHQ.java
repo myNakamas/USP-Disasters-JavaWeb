@@ -1,8 +1,8 @@
 package json;
 
 import json.handlers.JsonBodyHandler;
-import json.models.Result;
-import json.models.Event;
+import models.Result;
+import models.Event;
 
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -14,7 +14,7 @@ import java.util.function.Supplier;
 
 public final class ApiPredictHQ {
 
-    private static String accessToken = "Wal1qLLD4kBMT_TYsryu653IHrC8x7fKyxzQjkFe";
+    private final static String accessToken = "Wal1qLLD4kBMT_TYsryu653IHrC8x7fKyxzQjkFe";
 
     public static ArrayList<Result> basicSearch()
 
