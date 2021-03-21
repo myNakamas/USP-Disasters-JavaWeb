@@ -12,6 +12,7 @@ body{
     font-family: system-ui, serif;
 }
 a{
+    cursor:pointer;
     text-decoration:none;
     font-size: inherit;
     font-weight: bold;
@@ -105,8 +106,29 @@ h1.header-title {
 
 .navigation-bar{
     height: 70px;
-    border-bottom: 2px white solid;
+    border-bottom: 2px var(--base-color) solid;
     position: fixed;
     width: 100%;
     text-align: center;
 }
+.profile-pic {
+    width: 70px;
+    height: 70px;
+    margin: 0 70px;
+}
+.dropdown-content {
+    display: none;
+    background-color: var(--base-color);
+    z-index: 1;
+}
+.dropdown-content a {
+    color: var(--anti-color);
+    padding: 20px;
+    display: block;
+    text-align: left;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown-content a:hover {background-color:var(--second-color);}
+
