@@ -8,26 +8,22 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%--<%@ page contentType="text/html;charset=UTF-8" %>--%>
-<%--<html>--%>
-<%--<head>--%>
-<%--    <title>For Spiro We Live</title>--%>
-<%--    <link rel="stylesheet" href="CSS/css.css" type="text/css">--%>
-
-<%--</head>--%>
-<%--<body>--%>
 
 <%--Get the parameter that was passed through the outer jsp file--%>
 
-<% ArrayList<Result> events = (ArrayList<Result>)request.getSession().getAttribute("events"); int i = (int) request.getSession().getAttribute("i");%>
+<%
+//FIXME: optimize this. maybe pass only one Result through the session at a time?
+    ArrayList<Result> events = (ArrayList<Result>)request.getSession().getAttribute("events");
+    int i = (int) request.getSession().getAttribute("i");
+%>
 
+<%--FIXME:SHOW THE EVENT BY ITS ID, NOT ITS INDEX, also the link may not work--%>
+    <a href="${pageContext.request.contextPath}/EventDetails.jsp?id=<%=i%>">
     <div style= "border: 5px solid sandybrown" class="event-wrapper">
         <h3 class="event-title">
             <%=events.get(i).getTitle()%>
         </h3>
         <div class="event-content"></div>
     </div>
+    </a>
 
-
-
-<%--</body>--%>
-<%--</html>--%>
