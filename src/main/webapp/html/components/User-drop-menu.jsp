@@ -15,3 +15,4 @@
             <a>Notification settings</a>
     </div>
 </div>
+<%--Todo: redirect the user to the corresponding pages.--%>

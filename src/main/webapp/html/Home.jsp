@@ -4,7 +4,7 @@
 <html>
 <head>
     <title>JSP - Hello World</title>
-    <link rel="stylesheet" href="web-resources/CSS/css.css" type="text/css">
+    <link rel="stylesheet" href="../web-resources/CSS/css.css" type="text/css">
 </head>
 <body>
 <%--    <%=session.getAttribute("events")%>--%>
@@ -26,7 +26,10 @@
     </nav>
     <div class="vertical">
         <div class="event-page">
-            <%--            TODO: Display every of the events with an FOREACH--%>
+            <%--            TODO: Display every of the events with an FOREACH - Done?--%>
+            <%--            FIXME: write better css so it looks good--%>
+            <%--            I turned off the connection with the api and set up some static info in the home-servlet--%>
+            <%--            just so we dont do too many requests from the api accidentally--%>
             <%int i=0;%>
             <c:forEach items="${sessionScope.events}" var = "event">
                 <% request.getSession().setAttribute("i",i++);%>
