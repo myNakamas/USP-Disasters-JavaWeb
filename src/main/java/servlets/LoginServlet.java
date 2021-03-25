@@ -21,6 +21,9 @@ public class LoginServlet extends HttpServlet {
         System.out.println(username);
         System.out.println(password);
 
+        //TODO: Make it work
+
+
         //and then refresh the page
         RequestDispatcher view = request.getRequestDispatcher("html/Login.jsp");
         view.forward(request, response);

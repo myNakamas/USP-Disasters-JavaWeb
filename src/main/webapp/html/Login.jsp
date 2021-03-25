@@ -24,16 +24,16 @@
                     <input class="textbox" name="username" id="username" type="text" placeholder="Username">
                     <label style="display:none;" for="password">Password</label>
                     <input class="textbox" name="password" id="password" type="password" placeholder="Password">
-                    <input class="btn vertical-btn" type="submit" value="Log in">
+                    <input class="btn vertical" type="submit" value="Log in">
                 </form>
             </div>
         </div>
         <div class="login-right">
             <div class="align-down-left">
-            <button class="btn vertical-btn">
+            <button class="btn vertical">
             Login with Google
             </button>
-            <button class="btn vertical-btn">
+            <button class="btn vertical">
             Login with Facebook
             </button>
             </div>

@@ -24,6 +24,16 @@
             </c:choose>
         </div>
     </nav>
+    <div class="vertical">
+        <div class="event-page">
+            <%--            TODO: Display every of the events with an FOREACH--%>
+            <%int i=0;%>
+            <c:forEach items="${sessionScope.events}" var = "event">
+                <% request.getSession().setAttribute("i",i++);%>
+                <jsp:include page="components/EventDiv.jsp"/>
+            </c:forEach>
+        </div>
+    </div>
 
 
 </body>

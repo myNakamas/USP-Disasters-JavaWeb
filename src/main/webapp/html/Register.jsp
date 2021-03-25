@@ -1,5 +1,4 @@
-<%@ page import="json.GoogleMapsAPI" %><%--
-  Created by IntelliJ IDEA.
+<%--  Created by IntelliJ IDEA.
   User: Angel
   Date: 17-Mar-21
   Time: 22:13
@@ -13,24 +12,36 @@
 
 </head>
 <body>
-<%--dynamic including--%>
+<div class="wrapper">
+    <h1 class="header-text">Log in</h1>
 
-<jsp:include page='components/superSpiro.jsp'>
-    <jsp:param name="Event" value="This is the first event "/>
-</jsp:include>      <%-- We can pass different parameters like this, so it will be easier to work--%>
+        <div class="vertical">
+                <form method="post" action="${pageContext.request.contextPath}/Register">
 
-<%--We can use an embed map to display an event--%>
-<%--<div class="mapouter">--%>
-<%--    <div class="gmap_canvas">--%>
-<%--        <iframe width="600" height="500" id="gmap_canvas"--%>
-<%--                src="https://maps.google.com/maps?q=43.5646046,27.81603&hl=es&z=14&amp;output=embed">--%>
-<%--        </iframe>--%>
-<%--        <a href="https://youtube-embed-code.com">youtube embed code</a>--%>
-<%--        <br><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}</style>--%>
-<%--        <a href="https://www.embedgooglemap.net">how to add google maps to a website</a>--%>
-<%--        <style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style>--%>
-<%--    </div>--%>
-<%--</div>--%>
+                    <label style="display:none;" for="username">Username</label>
+                    <input class="textbox" name="username" id="username" type="text" placeholder="Username">
+                    <label style="display:none;" for="email">Email</label>
+                    <input class="textbox" name="email" id="email" type="email" placeholder="Email">
+                    <label style="display:none;" for="phone">Phone</label>
+                    <input class="textbox" name="phone" id="phone" type="text" placeholder="Phone">
+                    <label style="display:none;" for="password">Password</label>
+                    <input class="textbox" name="password" id="password" type="password" placeholder="Password">
+                    <label style="display:none;" for="password2">Password2</label>
+                    <input class="textbox" name="password2" id="password2" type="password" placeholder="Rewrite the password">
+<%--                    Country--%>
+<%--                    Captcha--%>
+                    <input class="btn vertical" type="submit" value="Log in">
+                </form>
+        </div>
+    </div>
+    <div class="horizontal-flex-buttons">
+        <a class="flex-btn btn" href="${pageContext.request.contextPath}/">
+            Back to Home page
+        </a>
+        <a class="flex-btn btn" href="">
+            Already have an account? <br> Log in.
+        </a>
+    </div>
 
 
 </body>

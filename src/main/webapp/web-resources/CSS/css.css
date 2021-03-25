@@ -95,7 +95,7 @@ h1.header-title {
     display: flex;
     margin: 0 12.5%;
 }
-.vertical-btn {
+.vertical {
     display: block;
     margin: 30px auto;
 }
@@ -107,7 +107,7 @@ h1.header-title {
 .navigation-bar{
     height: 70px;
     border-bottom: 2px var(--base-color) solid;
-    position: fixed;
+    /*position: fixed;*/
     width: 100%;
     text-align: center;
 }
@@ -132,3 +132,15 @@ h1.header-title {
 }
 .dropdown-content a:hover {background-color:var(--second-color);}
 
+.event-wrapper {
+    margin: 5%;
+    display: inline-block;
+}
+h3.event-title {
+    margin: 5px 40px;
+}
+.event-page {
+    display: block;
+    margin: 20px 20% 0 20%;
+    text-align: center;
+}

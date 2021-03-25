@@ -1,5 +1,7 @@
 package servlets;
 
+import models.User;
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -17,12 +19,29 @@ public class RegisterServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("username");
+        String email = request.getParameter("email");
         String password = request.getParameter("password");
-        System.out.println(username);
-        System.out.println(password);
+        String password2 = request.getParameter("password2");
+        String phone = request.getParameter("phone");
 
-        //and then refresh the page
-        RequestDispatcher view = request.getRequestDispatcher("html/Register.jsp");
-        view.forward(request, response);
+        try {
+            if(username.equals("")||email.equals("")||password.equals("")|| password2.equals("")||phone.equals("")) throw new Exception("Fill all the fields!");
+            //TODO: all the verifications
+
+            //TODO: Check for the username in the database
+
+            User user = new User(username,password,email,phone);
+
+            //TODO:persist the user
+            RequestDispatcher view = request.getRequestDispatcher("html/Home.jsp");
+            view.forward(request, response);
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+            //refresh the page
+            RequestDispatcher view = request.getRequestDispatcher("html/Register.jsp");
+            view.forward(request, response);
+        }
     }
 }

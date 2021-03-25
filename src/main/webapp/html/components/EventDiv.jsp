@@ -1,4 +1,6 @@
-<%--
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="models.Result" %>
+<%@ page import="java.util.ArrayList" %><%--
   Created by IntelliJ IDEA.
   User: Martin
   Date: 18.3.2021 г.
@@ -15,18 +17,16 @@
 <%--<body>--%>
 
 <%--Get the parameter that was passed through the outer jsp file--%>
-    <%String event = request.getParameter("Event");%>
+
+<% ArrayList<Result> events = (ArrayList<Result>)request.getSession().getAttribute("events"); int i = (int) request.getSession().getAttribute("i");%>
 
     <div style= "border: 5px solid sandybrown" class="event-wrapper">
         <h3 class="event-title">
-            <%=event%>
+            <%=events.get(i).getTitle()%>
         </h3>
-    <div class="event-content">
-    <label>My name is Spiro...SUPER spiro</label>
+        <div class="event-content"></div>
+    </div>
 
-    <h6 style="color: red">My name is Spiro...SUPER spiro</h6>
-    </div>
-    </div>
 
 
 <%--</body>--%>

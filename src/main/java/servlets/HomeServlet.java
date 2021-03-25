@@ -17,11 +17,13 @@ public class HomeServlet extends HttpServlet {
     public void init() throws ServletException {
         super.init();
         //this is absolutely not professional. but its what i know so far.
-        events = ApiPredictHQ.basicSearch();
+        events = new ArrayList<Result>(); // ApiPredictHQ.basicSearch();
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        events.add(new Result("this"));
+        events.add(new Result("that"));
         HttpSession session = request.getSession();
         session.setAttribute("events",events);
         response.setContentType("text/html");
