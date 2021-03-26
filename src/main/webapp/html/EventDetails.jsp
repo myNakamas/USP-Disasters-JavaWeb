@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Angel
@@ -9,23 +10,56 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Details</title>
     <link rel="stylesheet" href="web-resources/CSS/css.css" type="text/css">
 
 </head>
 <body>
 <div class="wrapper">
-    <h1>${requestScope.eventTitle}</h1>
-
-    <div class = wrapper>
-        <div class="box-border-down">
-            <p> ${requestScope.eventCategory}</p>
-            <p> ${requestScope.eventStart}</p>
+    <div class="box-border-down">
+    <div class="nav-left">
+        <a class="button" href="${pageContext.request.contextPath}/">Back </a>
+    </div>
+        <div>
+            <h1 >${requestScope.eventTitle}</h1>
         </div>
-        <%--TODO: SHOW MORE INFORMATION FOR THE EVENT.--%>
+    </div>
+    <div class = wrapper>
             <div class = "detailContainer">
                 <div class ="description">
-                    <p> ${requestScope.eventDescription}</p>
+                        <h1 >Description</h1>
+                    <table>
+                        <tr>
+                            <td>Category : ${requestScope.eventCategory}</td>
+                        </tr>
+                        <tr>
+                            <td>Start : ${requestScope.eventStart}</td>
+                        </tr>
+                        <tr>
+                            <td>End : ${requestScope.eventEnd}</td>
+                        </tr>
+                        <tr>
+                            <td>Duration : ${requestScope.eventDuration}</td>
+                        </tr>
+                        <c:choose>
+                            <c:when test="${!requestScope.eventDescription.equals('')}">
+                        <tr>
+                            <td>Additional information : ${requestScope.eventDescription}</td>
+                        </tr>
+                            </c:when>
+                        </c:choose>
+                        <tr>
+                            <td>Relevance : ${requestScope.eventRelevance}</td>
+                        </tr>
+                            <c:choose>
+                                <c:when test="${requestScope.eventTimezone != null}">
+                        <tr>
+                            <td>Timezone : ${requestScope.eventTimezone}</td>
+                        </tr>
+                                </c:when>
+                            </c:choose>
+                    </table>
+                </div>
                 </div>
                 <div class="mapContainer">
                     <iframe width="600" height="500" id="gmap_canvas"
@@ -36,11 +70,7 @@
             </div>
     </div>
 </div>
-<div class="">
-    <a class="btn" href="${pageContext.request.contextPath}/">
-        Back to Home page
-    </a>
-</div>
+
 
 
 </body>

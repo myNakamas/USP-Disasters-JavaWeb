@@ -20,7 +20,10 @@ public class EventServlet extends HttpServlet {
         request.setAttribute("eventCategory",r.getCategory());
         request.setAttribute("eventLocation",r.getLocation().get(1)+","+r.getLocation().get(0));
         request.setAttribute("eventStart",r.getStart());
-
+        request.setAttribute("eventEnd",r.getEnd());
+        request.setAttribute("eventDuration",r.getDuration());
+        request.setAttribute("eventTimezone",r.getTimezone());
+        request.setAttribute("eventRelevance",r.getRelevance());
         RequestDispatcher view = request.getRequestDispatcher("html/EventDetails.jsp");
         view.forward(request, response);
 

@@ -17,7 +17,7 @@ public class Result {
     Date predicted_end;
     Date updated;
     Date first_seen;
-    String timezond;
+    String timezone;
     int duration;
     int rank;
     int local_rank;
@@ -105,12 +105,12 @@ public class Result {
         this.first_seen = first_seen;
     }
 
-    public String getTimezond() {
-        return timezond;
+    public String getTimezone() {
+        return timezone;
     }
 
-    public void setTimezond(String timezond) {
-        this.timezond = timezond;
+    public void setTimezone(String timezone) {
+        this.timezone = timezone;
     }
 
     public int getDuration() {
@@ -174,7 +174,7 @@ public class Result {
                 ",\n predicted_end=" + predicted_end +
                 ",\n updated=" + updated +
                 ",\n first_seen=" + first_seen +
-                ",\n timezond='" + timezond + '\'' +
+                ",\n timezone='" + timezone + '\'' +
                 ",\n duration=" + duration +
                 ",\n rank=" + rank +
                 ",\n local_rank=" + local_rank +

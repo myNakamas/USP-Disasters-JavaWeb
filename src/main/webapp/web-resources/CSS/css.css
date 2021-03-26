@@ -97,6 +97,19 @@ h1.header-title {
     float: right;
     width: 21vmax;
 }
+.description{
+    float : right;
+    width : 50%;
+    margin : 0 50px 0 0;
+}
+table, th, td {
+    border: 3px solid var(--anti-color);
+}
+.nav-left{
+    display: inline-flex;
+    float: left;
+    width: 21vmax;
+}
 .horizontal-flex-buttons{
     display: flex;
     margin: 0 12.5%;
