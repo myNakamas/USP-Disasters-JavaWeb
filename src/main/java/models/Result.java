@@ -25,10 +25,6 @@ public class Result {
     String country;
     ArrayList<Double> location;
 
-    public Result(String aThis) {
-        this.title= aThis;
-    }
-
     public String getId() {
         return id;
     }

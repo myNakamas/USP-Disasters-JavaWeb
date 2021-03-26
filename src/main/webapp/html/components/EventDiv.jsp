@@ -18,7 +18,7 @@
 %>
 
 <%--FIXME:SHOW THE EVENT BY ITS ID, NOT ITS INDEX, also the link may not work--%>
-    <a href="${pageContext.request.contextPath}/EventDetails.jsp?id=<%=i%>">
+    <a href="${pageContext.request.contextPath}/EventDetails?id=<%=i%>">
     <div style= "border: 5px solid sandybrown" class="event-wrapper">
         <h3 class="event-title">
             <%=events.get(i).getTitle()%>

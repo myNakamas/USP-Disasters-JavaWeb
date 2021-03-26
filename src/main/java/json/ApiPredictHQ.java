@@ -24,7 +24,7 @@ public final class ApiPredictHQ {
             String host = "https://api.predicthq.com/v1/events/";
             List<String> parameters = new ArrayList<>();
             parameters.add("category=disasters%2Cterror%2Chealth-warnings");
-            parameters.add("limit=20");
+            parameters.add("limit=10");
             //parameters.add("country=JP");
             host += "?";
             StringBuilder hostBuilder = new StringBuilder(host);
