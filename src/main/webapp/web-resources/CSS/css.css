@@ -1,6 +1,6 @@
 :root {
     --base-color: #d7dae1;
-    --second-color:  #cd6e39;
+    --second-color: #cd6e39;
     --third-color: #c86432;
     --anti-color: #171718;
     --second-color-dark: #ba5c44;
@@ -9,7 +9,7 @@ body{
     background-color:var(--anti-color);
     margin:0;
     color:var(--base-color);
-    font-family: system-ui, serif;
+    font-family: sans-serif;
 }
 a{
     cursor:pointer;
@@ -17,6 +17,10 @@ a{
     font-size: inherit;
     font-weight: bold;
     color:var(--base-color);
+}
+.logo{
+    width : 20%;
+    background-color:var(--anti-color);
 }
 .login-left {
     border-right: 1px solid var(--base-color);
@@ -31,13 +35,14 @@ a{
 }
 
 .button {
-    height: 30px;
-    width: 130px;
-    margin:20px;
     background-color:var(--third-color);
     border-radius: 10px;
     border : 3px var(--second-color) solid;
     /*color : var(--base-color);*/
+    display:  inline-flex;
+    margin: 6%;
+    font-size: 1vmax;
+    padding: 0.5vmax 2vmax;
 }
 
 .button:hover {
@@ -84,12 +89,13 @@ h1.header-text {
 }
 h1.header-title {
     margin: 15px 0;
-    position: fixed;
-    left: 40%;
+    font-size: 3vmax;
+    display: inline-flex;
 }
 .nav-right{
     display: inline-flex;
     float: right;
+    width: 21vmax;
 }
 .horizontal-flex-buttons{
     display: flex;
@@ -97,7 +103,7 @@ h1.header-title {
 }
 .vertical {
     display: block;
-    margin: 30px auto;
+    padding: 100px 0;
 }
 .flex-btn {
     flex: 1;
@@ -105,11 +111,11 @@ h1.header-title {
 }
 
 .navigation-bar{
-    height: 70px;
     border-bottom: 2px var(--base-color) solid;
-    /*position: fixed;*/
+    position: fixed;
     width: 100%;
     text-align: center;
+    background-color: var(--anti-color);
 }
 .profile-pic {
     width: 70px;

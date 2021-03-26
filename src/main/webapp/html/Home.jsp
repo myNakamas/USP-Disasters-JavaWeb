@@ -4,18 +4,20 @@
 <html>
 <head>
     <title>JSP - Hello World</title>
-    <link rel="stylesheet" href="../web-resources/CSS/css.css" type="text/css">
+    <link rel="stylesheet" href="web-resources/CSS/css.css" type="text/css">
 </head>
 <body>
 <%--    <%=session.getAttribute("events")%>--%>
-    <h1 class="header-title">Disaster information</h1>
+
     <nav class="navigation-bar">
+        <div class = "logo"></div>
+        <h1 class="header-title">Disaster information</h1>
         <div class="nav-right">
 <%--            <% if(session.getAttribute("currentUser")==null)  This is one way to make an if statement with jsp--%>
             <c:choose> <%--And this is an if else statement with jstl--%>
                 <%--@elvariable id="currentUser" type="models.User"--%>
                 <c:when test="${sessionScope.user == null}">
-                <a class= "button" href="${pageContext.request.contextPath}/Login">⚰Log in</a>
+                <a class= "button" href="${pageContext.request.contextPath}/Login">Log in</a>
                 <a class= "button" href="${pageContext.request.contextPath}/Register">Sign up</a>
                 </c:when>
                 <c:otherwise>
@@ -26,7 +28,7 @@
     </nav>
     <div class="vertical">
         <div class="event-page">
-            <%--            TODO: Display every of the events with an FOREACH - Done?--%>
+            <%--            TODO: Display every of the events with a FOREACH - Optimize?--%>
             <%--            FIXME: write better css so it looks good--%>
             <%--            I turned off the connection with the api and set up some static info in the home-servlet--%>
             <%--            just so we dont do too many requests from the api accidentally--%>

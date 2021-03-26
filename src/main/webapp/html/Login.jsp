@@ -46,7 +46,7 @@
                 <a class="flex-btn btn" href="">
                     Forgotten name or password
                 </a>
-                <a class="flex-btn btn" href="">
+                <a class="flex-btn btn" href="${pageContext.request.contextPath}/Register">
                     Create account
                 </a>
     </div>

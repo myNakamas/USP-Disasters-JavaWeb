@@ -13,7 +13,7 @@
 </head>
 <body>
 <div class="wrapper">
-    <h1 class="header-text">Log in</h1>
+    <h1 class="header-text">Sign up</h1>
 
         <div class="vertical">
                 <form method="post" action="${pageContext.request.contextPath}/Register">
@@ -38,7 +38,7 @@
         <a class="flex-btn btn" href="${pageContext.request.contextPath}/">
             Back to Home page
         </a>
-        <a class="flex-btn btn" href="">
+        <a class="flex-btn btn" href="${pageContext.request.contextPath}/Login">
             Already have an account? <br> Log in.
         </a>
     </div>
