@@ -87,10 +87,13 @@ h1.header-text {
     padding: 20px 10%;
     border-bottom: 1px solid var(--base-color);
 }
-h1.header-title {
+.header-title {
     margin: 15px 0;
-    font-size: 3vmax;
+    font-size: 2.5vmax;
     display: inline-flex;
+}
+.title-box{
+    align-self:center;
 }
 .nav-right{
     display: inline-flex;
@@ -113,10 +116,15 @@ table, th, td {
 .horizontal-flex-buttons{
     display: flex;
     margin: 0 12.5%;
+    text-align:center;
 }
 .vertical {
     display: block;
-    padding: 100px 0;
+    padding: 6vmax 0;
+}
+.vertical-button{
+    display: block;
+    margin: 30px auto;
 }
 .flex-btn {
     flex: 1;
@@ -152,14 +160,45 @@ table, th, td {
 .dropdown-content a:hover {background-color:var(--second-color);}
 
 .event-wrapper {
-    margin: 5%;
+    border: 5px solid var(--second-color);
+    margin: 5% 5% 0 5%;
     display: inline-block;
 }
 h3.event-title {
-    margin: 5px 40px;
+    margin: 10px;
+    padding: 5px 10px;
+    border-bottom: 3px solid var(--second-color);
 }
 .event-page {
     display: block;
-    margin: 20px 20% 0 20%;
+    margin: 0 10%;
+    text-align: center;
+}
+.event-content .event-date {
+    display: inline-flex;
+    font-size: small;
+    margin: 5px 20px;
+}
+.search-box {
+    width: 30vmax;
+    padding: 0.5vmax 2vmax;
+    background-color: #C4C4C4;
+    border-radius: 10px;
+    border: none;
+}
+.map {
+    border-radius: 20px;
+    border: dashed 2px var(--second-color);
+    padding: 10px;
+}
+.search-bar-container {
+    text-align: center;
+}
+.footer{
+    border-top: solid var(--base-color);
+    background-color: var(--second-color-dark);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     text-align: center;
 }

@@ -1,6 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="models.Result" %>
-<%@ page import="java.util.ArrayList" %><%--
+<%--
   Created by IntelliJ IDEA.
   User: Martin
   Date: 18.3.2021 г.
@@ -12,18 +11,21 @@
 <%--Get the parameter that was passed through the outer jsp file--%>
 
 <%
-//FIXME: optimize this. maybe pass only one Result through the session at a time?
-    ArrayList<Result> events = (ArrayList<Result>)request.getSession().getAttribute("events");
-    int i = (int) request.getSession().getAttribute("i");
+    //ArrayList<Result> events = (ArrayList<Result>)request.getSession().getAttribute("events");
+    //int i = (int) request.getSession().getAttribute("i");
 %>
-
-<%--FIXME:SHOW THE EVENT BY ITS ID, NOT ITS INDEX, also the link may not work--%>
-    <a href="${pageContext.request.contextPath}/EventDetails?id=<%=i%>">
-    <div style= "border: 5px solid sandybrown" class="event-wrapper">
+    <a href="${pageContext.request.contextPath}/EventDetails?id=${sessionScope.i}">
+    <div class="event-wrapper">
         <h3 class="event-title">
-            <%=events.get(i).getTitle()%>
+            ${sessionScope.events.get(sessionScope.i).title}
         </h3>
-        <div class="event-content"></div>
+        <div class="event-content">
+            <p class="event-category">  Category: ${sessionScope.events.get(sessionScope.i).category.toUpperCase()}</p>
+            <p class="event-date"> Start: ${sessionScope.events.get(sessionScope.i).start.toGMTString()}</p>
+            <p class="event-date">  End: ${sessionScope.events.get(sessionScope.i).end.toGMTString()}</p>
+
+
+        </div>
     </div>
     </a>
 

@@ -15,62 +15,65 @@
 
 </head>
 <body>
-<div class="wrapper">
-    <div class="box-border-down">
-    <div class="nav-left">
-        <a class="button" href="${pageContext.request.contextPath}/">Back </a>
-    </div>
-        <div>
-            <h1 >${requestScope.eventTitle}</h1>
+    <div class="wrapper">
+        <div class="box-border-down">
+            <div class="nav-left">
+                <a class="button" href="${pageContext.request.contextPath}/">Back </a>
+            </div>
+            <div class="title-box">
+                <h1>${requestScope.eventTitle}</h1>
+            </div>
         </div>
-    </div>
-    <div class = wrapper>
-            <div class = "detailContainer">
-                <div class ="description">
-                        <h1 >Description</h1>
+        <div class=wrapper>
+            <div class="detailContainer">
+                <div class="description">
+                    <h1>Description</h1>
                     <table>
                         <tr>
-                            <td>Category : ${requestScope.eventCategory}</td>
+                            <td><b>Category :</b>${requestScope.eventCategory.toUpperCase()}</td>
                         </tr>
                         <tr>
-                            <td>Start : ${requestScope.eventStart}</td>
+                            <td><b>Start :</b>${requestScope.eventStart.toGMTString()}</td>
                         </tr>
                         <tr>
-                            <td>End : ${requestScope.eventEnd}</td>
-                        </tr>
-                        <tr>
-                            <td>Duration : ${requestScope.eventDuration}</td>
+                            <td><b>End :</b>${requestScope.eventEnd.toGMTString()}</td>
                         </tr>
                         <c:choose>
+                            <c:when test="${requestScope.eventDuration!=0}">
+                                <tr>
+
+                                    <td><b>Duration :</b>${requestScope.eventDuration}</td>
+                                </tr>
+                            </c:when>
+                        </c:choose>
+                        <c:choose>
                             <c:when test="${!requestScope.eventDescription.equals('')}">
-                        <tr>
-                            <td>Additional information : ${requestScope.eventDescription}</td>
-                        </tr>
+                                <tr>
+                                    <td><b>Additional information :</b>${requestScope.eventDescription}</td>
+                                </tr>
                             </c:when>
                         </c:choose>
                         <tr>
-                            <td>Relevance : ${requestScope.eventRelevance}</td>
+                            <td><b>Relevance :</b>${requestScope.eventRelevance}</td>
                         </tr>
-                            <c:choose>
-                                <c:when test="${requestScope.eventTimezone != null}">
-                        <tr>
-                            <td>Timezone : ${requestScope.eventTimezone}</td>
-                        </tr>
-                                </c:when>
-                            </c:choose>
+                        <c:choose>
+                            <c:when test="${requestScope.eventTimezone != null}">
+                                <tr>
+                                    <td><b>Timezone :</b>${requestScope.eventTimezone}</td>
+                                </tr>
+                            </c:when>
+                        </c:choose>
                     </table>
                 </div>
-                </div>
-                <div class="mapContainer">
-                    <iframe width="600" height="500" id="gmap_canvas"
-                                    src="https://maps.google.com/maps?q=${requestScope.eventLocation}&hl=es&z=7&amp;output=embed">
-                    </iframe>
-
-                </div>
             </div>
-    </div>
-</div>
+            <div class="mapContainer">
+                <iframe title="Location" class="map" width="600" height="500" id="gmap_canvas"
+                        src="https://maps.google.com/maps?q=${requestScope.eventLocation}&hl=es&z=7&amp;output=embed">
+                </iframe>
 
+            </div>
+        </div>
+    </div>
 
 
 </body>

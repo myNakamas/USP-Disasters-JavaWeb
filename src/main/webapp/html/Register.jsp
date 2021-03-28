@@ -30,10 +30,11 @@
                     <input class="textbox" name="password2" id="password2" type="password" placeholder="Rewrite the password">
 <%--                    Country--%>
 <%--                    Captcha--%>
-                    <input class="btn vertical" type="submit" value="Log in">
+                    <input class="btn vertical-button" type="submit" value="Log in">
                 </form>
         </div>
     </div>
+
     <div class="horizontal-flex-buttons">
         <a class="flex-btn btn" href="${pageContext.request.contextPath}/">
             Back to Home page
@@ -42,7 +43,6 @@
             Already have an account? <br> Log in.
         </a>
     </div>
-
 
 </body>
 </html>
