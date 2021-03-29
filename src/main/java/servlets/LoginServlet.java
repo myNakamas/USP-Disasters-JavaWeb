@@ -5,7 +5,7 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "LoginServlet", value = "/LoginServlet")
+@WebServlet(name = "LoginServlet")
 public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -20,6 +20,9 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("password");
         System.out.println(username);
         System.out.println(password);
+
+        //TODO: Make it work
+
 
         //and then refresh the page
         RequestDispatcher view = request.getRequestDispatcher("html/Login.jsp");

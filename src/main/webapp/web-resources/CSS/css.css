@@ -1,0 +1,204 @@
+:root {
+    --base-color: #d7dae1;
+    --second-color: #cd6e39;
+    --third-color: #c86432;
+    --anti-color: #171718;
+    --second-color-dark: #ba5c44;
+}
+body{
+    background-color:var(--anti-color);
+    margin:0;
+    color:var(--base-color);
+    font-family: sans-serif;
+}
+a{
+    cursor:pointer;
+    text-decoration:none;
+    font-size: inherit;
+    font-weight: bold;
+    color:var(--base-color);
+}
+.logo{
+    width : 20%;
+    background-color:var(--anti-color);
+}
+.login-left {
+    border-right: 1px solid var(--base-color);
+    margin: 0 0 0 auto;
+}
+.login-right {
+    margin: 1px auto 0 0;
+}
+.login-left,.login-right {
+    width: 30%;
+    padding: 5% 0;
+}
+
+.button {
+    background-color:var(--third-color);
+    border-radius: 10px;
+    border : 3px var(--second-color) solid;
+    /*color : var(--base-color);*/
+    display:  inline-flex;
+    margin: 6%;
+    font-size: 1vmax;
+    padding: 0.5vmax 2vmax;
+}
+
+.button:hover {
+    background-color: var(--second-color);
+    border: 3px var(--third-color) solid;
+}
+.box-border-down {
+    display: flex;
+    border-bottom: 1px solid var(--base-color);
+    margin-bottom: 5%;
+}
+
+.textbox {
+    padding: 15px 50px 15px 10px;
+    margin: 2% 10%;
+    background-color: #C4C4C4;
+    border-radius: 10px;
+    border: none;
+}
+.btn {
+    text-decoration:none;
+    background-color: var(--second-color);
+    border-radius: 10px;
+    border: none;
+    padding: 20px 50px;
+    color: var(--base-color);
+    font-size: inherit;
+    font-weight: bold;
+}
+.btn:hover{
+    cursor:pointer;
+    background-color: var(--second-color-dark)
+}
+.wrapper {
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+}
+h1.header-text {
+    margin: 5% 0 0 0;
+    display: inline-block;
+    padding: 20px 10%;
+    border-bottom: 1px solid var(--base-color);
+}
+.header-title {
+    margin: 15px 0;
+    font-size: 2.5vmax;
+    display: inline-flex;
+}
+.title-box{
+    align-self:center;
+}
+.nav-right{
+    display: inline-flex;
+    float: right;
+    width: 21vmax;
+}
+.description{
+    float : right;
+    width : 50%;
+    margin : 0 50px 0 0;
+}
+table, th, td {
+    border: 3px solid var(--anti-color);
+}
+.nav-left{
+    display: inline-flex;
+    float: left;
+    width: 21vmax;
+}
+.horizontal-flex-buttons{
+    display: flex;
+    margin: 0 12.5%;
+    text-align:center;
+}
+.vertical {
+    display: block;
+    padding: 6vmax 0;
+}
+.vertical-button{
+    display: block;
+    margin: 30px auto;
+}
+.flex-btn {
+    flex: 1;
+    margin: 20px;
+}
+
+.navigation-bar{
+    border-bottom: 2px var(--base-color) solid;
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    background-color: var(--anti-color);
+}
+.profile-pic {
+    width: 70px;
+    height: 70px;
+    margin: 0 70px;
+}
+.dropdown-content {
+    display: none;
+    background-color: var(--base-color);
+    z-index: 1;
+}
+.dropdown-content a {
+    color: var(--anti-color);
+    padding: 20px;
+    display: block;
+    text-align: left;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown-content a:hover {background-color:var(--second-color);}
+
+.event-wrapper {
+    border: 5px solid var(--second-color);
+    margin: 5% 5% 0 5%;
+    display: inline-block;
+}
+h3.event-title {
+    margin: 10px;
+    padding: 5px 10px;
+    border-bottom: 3px solid var(--second-color);
+}
+.event-page {
+    display: block;
+    margin: 0 10%;
+    text-align: center;
+}
+.event-content .event-date {
+    display: inline-flex;
+    font-size: small;
+    margin: 5px 20px;
+}
+.search-box {
+    width: 30vmax;
+    padding: 0.5vmax 2vmax;
+    background-color: #C4C4C4;
+    border-radius: 10px;
+    border: none;
+}
+.map {
+    border-radius: 20px;
+    border: dashed 2px var(--second-color);
+    padding: 10px;
+}
+.search-bar-container {
+    text-align: center;
+}
+.footer{
+    border-top: solid var(--base-color);
+    background-color: var(--second-color-dark);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}

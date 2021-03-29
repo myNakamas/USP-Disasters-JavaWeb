@@ -7,7 +7,7 @@ import java.util.ArrayList;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Event {
 //    String id;            I dont think we need those, its mostly nulls
-//    String title;
+//    String title;         We can extract more than 1 page at a time
 //    String description;
 //    int count;
 //    boolean overflow;

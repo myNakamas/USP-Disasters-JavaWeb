@@ -9,8 +9,7 @@
 <html>
 <head>
     <title>Title</title>
-    <link rel="stylesheet" href="CSS/css.css" type="text/css">
-
+    <link rel="stylesheet" href="web-resources/CSS/css.css" type="text/css">
 </head>
 <body>
 <div class="wrapper">
@@ -18,24 +17,38 @@
 
     <div class="box-border-down">
         <div class="login-left">
-            <form method="post" action="${pageContext.request.contextPath}/Login">
-                <label>
-                    <input class="textbox" name="username" type="text" placeholder="username">
-                </label>
-                <label>
-                    <input class="textbox" name="password" type="password" placeholder="password">
-                </label>
-                <input class="btn" type="submit" value="Log in">
-            </form>
-            <div class="login-right">
-                <button class="btn">
+            <div class="align-down-right">
+                <form method="post" action="${pageContext.request.contextPath}/Login">
 
-                </button>
-                <button class="btn">
-
-                </button>
+                    <label style="display:none;" for="username">Username</label>
+                    <input class="textbox" name="username" id="username" type="text" placeholder="Username">
+                    <label style="display:none;" for="password">Password</label>
+                    <input class="textbox" name="password" id="password" type="password" placeholder="Password">
+                    <input class="btn vertical-button" type="submit" value="Log in">
+                </form>
             </div>
         </div>
+        <div class="login-right">
+            <div class="align-down-left">
+            <button class="btn vertical-button">
+            Login with Google
+            </button>
+            <button class="btn vertical-button">
+            Login with Facebook
+            </button>
+            </div>
+        </div>
+    </div>
+    <div class="horizontal-flex-buttons">
+                <a class="flex-btn btn" href="${pageContext.request.contextPath}/">
+                    Back to Home page
+                </a>
+                <a class="flex-btn btn" href="">
+                    Forgotten name or password
+                </a>
+                <a class="flex-btn btn" href="${pageContext.request.contextPath}/Register">
+                    Create account
+                </a>
     </div>
 </div>
 </body>

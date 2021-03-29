@@ -43,6 +43,11 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Maven: com.google.maps:google-maps-services:0.18.0" level="project" />
+    <orderEntry type="library" name="Maven: com.squareup.okhttp3:okhttp:3.14.4" level="project" />
+    <orderEntry type="library" name="Maven: com.squareup.okio:okio:1.17.2" level="project" />
+    <orderEntry type="library" name="Maven: io.opencensus:opencensus-api:0.25.0" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-simple:1.7.25" level="project" />
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:8.0.21" level="project" />
     <orderEntry type="library" name="Maven: com.google.protobuf:protobuf-java:3.11.4" level="project" />
     <orderEntry type="library" name="Maven: org.hibernate:hibernate-core:5.4.10.Final" level="project" />
@@ -96,6 +101,7 @@
     <orderEntry type="library" name="Maven: org.checkerframework:checker-compat-qual:2.5.5" level="project" />
     <orderEntry type="library" name="Maven: com.google.errorprone:error_prone_annotations:2.3.4" level="project" />
     <orderEntry type="library" name="Maven: com.google.apis:google-api-services-storage:v1-rev20200430-1.30.9" level="project" />
+    <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.8.6" level="project" />
     <orderEntry type="library" name="Maven: com.google.cloud:google-cloud-core:1.93.6" level="project" />
     <orderEntry type="library" name="Maven: com.google.api.grpc:proto-google-common-protos:1.18.0" level="project" />
     <orderEntry type="library" name="Maven: com.google.cloud:google-cloud-core-http:1.93.6" level="project" />
@@ -142,11 +148,5 @@
     <orderEntry type="library" name="Maven: jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:1.2.4" level="project" />
     <orderEntry type="library" name="Maven: jakarta.servlet:jakarta.servlet-api:4.0.2" level="project" />
     <orderEntry type="library" name="Maven: jakarta.el:jakarta.el-api:3.0.2" level="project" />
-    <orderEntry type="library" name="Maven: com.google.maps:google-maps-services:0.18.0" level="project" />
-    <orderEntry type="library" name="Maven: com.squareup.okhttp3:okhttp:3.14.4" level="project" />
-    <orderEntry type="library" name="Maven: com.squareup.okio:okio:1.17.2" level="project" />
-    <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.8.6" level="project" />
-    <orderEntry type="library" name="Maven: io.opencensus:opencensus-api:0.25.0" level="project" />
-    <orderEntry type="library" name="Maven: org.slf4j:slf4j-simple:1.7.25" level="project" />
   </component>
 </module>
