@@ -4,12 +4,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>JSP - Hello World</title>
+    <title>Disasters</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#000">
+    <meta name="Description" content="A Website displaying information about the Disasters around the world.">
     <link rel="apple-touch-icon" href="web-resources/images/logo/Disaster-logo180x180.png">
+    <link rel="icon" type="image/gif" href="web-resources/images/logo/Disaster-logo32x32.png">
+    <link rel="manifest" href="web-resources/json/manifest.json">
 <%--    not sure for the href--%>
     <link rel="stylesheet" href="web-resources/CSS/css.css" type="text/css">
+    <script src="js/themeFunctions.js"></script>
 </head>
 <body>
     <nav class="navigation-bar">
@@ -29,6 +33,7 @@
             </c:choose>
         </div>
     </nav>
+
     <div class="vertical">
         <div class="search-bar-container">
             <form method="post">
@@ -46,9 +51,12 @@
                 <input class="flex-btn btn" type="submit" value="Search">
             </form>
         </div>
+
+<%--        This is a javascript function to change the theme--%>
+        <div class="btn" onclick="changeTheme('#123','#fff','#123')">ClickME</div>
+
+
         <div class="event-page">
-            <%--            I turned off the connection with the api and set up some static info in the home-servlet--%>
-            <%--            just so we dont do too many requests from the api accidentally--%>
             <%int i=0;%>
             <c:forEach items="${sessionScope.events}" var = "event">
                 <% request.getSession().setAttribute("i",i++);%>

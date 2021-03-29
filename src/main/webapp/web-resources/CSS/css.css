@@ -1,9 +1,9 @@
 :root {
-    --base-color: #d7dae1;
-    --second-color: #cd6e39;
+    --base-color: #fff;
+    --second-color: #b84a13;
     --third-color: #c86432;
     --anti-color: #171718;
-    --second-color-dark: #ba5c44;
+    --second-color-dark: #8b280f;
 }
 body{
     background-color:var(--anti-color);
