@@ -1,0 +1,15 @@
+{
+  "name": "Disasters-USP",
+  "short_name": "Disasters",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#000",
+  "description": "A Website displaying information about the Disasters around the world.",
+  "icons": [
+    {
+      "src": "Disaster-logo180x180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
