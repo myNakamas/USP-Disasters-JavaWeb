@@ -1,13 +1,28 @@
 package models;
 
+
+import javax.persistence.*;
 import java.util.Objects;
 
+@Entity
+@Table(name = "user")
 public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "userId", unique = true, nullable = false)
+    private int userId;
+
+    @Column(name = "username", unique = true, nullable = false)
     private String username;
+
+    @Column(name = "password", nullable = false)
     private String password;
+
+    @Column(name = "email")
     private String email;
+
+    @Column(name = "phone")
     private String phone;
-    private String country;
 
     public User(String username, String password, String email, String phone) {
         this.username = username;
@@ -15,6 +30,10 @@ public class User {
         this.email = email;
         this.phone = phone;
     }
+    public User() {
+
+    }
+
 
     public String getUsername() {
         return username;
@@ -48,13 +67,7 @@ public class User {
         this.phone = phone;
     }
 
-    public String getCountry() {
-        return country;
-    }
 
-    public void setCountry(String country) {
-        this.country = country;
-    }
 
     @Override
     public boolean equals(Object o) {

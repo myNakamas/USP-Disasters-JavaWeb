@@ -28,9 +28,8 @@
                     <input class="textbox" name="password" id="password" type="password" placeholder="Password">
                     <label style="display:none;" for="password2">Password2</label>
                     <input class="textbox" name="password2" id="password2" type="password" placeholder="Rewrite the password">
-<%--                    Country--%>
-<%--                    Captcha--%>
-                    <input class="btn vertical-button" type="submit" value="Log in">
+<%--                    TODO: add Country and Captcha--%>
+                    <input class="btn vertical-button" type="submit" value="Register">
                 </form>
         </div>
     </div>

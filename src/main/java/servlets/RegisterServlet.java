@@ -1,6 +1,7 @@
 package servlets;
 
 import models.User;
+import services.UserService;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -32,16 +33,17 @@ public class RegisterServlet extends HttpServlet {
 
             User user = new User(username,password,email,phone);
 
-            //TODO:persist the user
-            RequestDispatcher view = request.getRequestDispatcher("html/Home.jsp");
-            view.forward(request, response);
+            UserService userService= new UserService();
+            userService.persist(user);
+
+            response.sendRedirect(request.getContextPath()+"/Login");
         }
         catch(Exception e)
         {
             System.out.println(e.getMessage());
+            request.setAttribute("error",e.getMessage());
             //refresh the page
-            RequestDispatcher view = request.getRequestDispatcher("html/Register.jsp");
-            view.forward(request, response);
+            response.sendRedirect(request.getContextPath()+"/Register");
         }
     }
 }

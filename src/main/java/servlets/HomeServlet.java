@@ -1,21 +1,19 @@
 package servlets;
 
-import com.fasterxml.jackson.databind.util.JSONPObject;
-import com.google.gson.*;
-import io.netty.handler.codec.json.JsonObjectDecoder;
 import json.ApiPredictHQ;
 import models.Result;
+import org.hibernate.Session;
+import util.HibernateUtil;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Locale;
 
 @WebServlet(name = "home")
 public class HomeServlet extends HttpServlet {
@@ -26,6 +24,7 @@ public class HomeServlet extends HttpServlet {
         super.init();
         //this is absolutely not professional. but its what i know so far.
         //events = ApiPredictHQ.basicSearch();//new ArrayList<Result>();
+        Session session = HibernateUtil.getSessionFactory().openSession();
     }
 
     @Override
