@@ -1,4 +1,4 @@
-package json.handlers;
+package api.handlers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 

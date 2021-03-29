@@ -1,6 +1,6 @@
-package json;
+package api;
 
-import json.handlers.JsonBodyHandler;
+import api.handlers.JsonBodyHandler;
 import models.Result;
 import models.Event;
 

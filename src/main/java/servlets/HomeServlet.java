@@ -1,6 +1,6 @@
 package servlets;
 
-import json.ApiPredictHQ;
+import api.ApiPredictHQ;
 import models.Result;
 import org.hibernate.Session;
 import util.HibernateUtil;

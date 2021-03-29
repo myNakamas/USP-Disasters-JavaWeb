@@ -188,7 +188,7 @@ h3.event-title {
 }
 .map {
     border-radius: 20px;
-    border: dashed 2px var(--second-color);
+    border: dotted 2px var(--second-color);
     padding: 10px;
 }
 .search-bar-container {

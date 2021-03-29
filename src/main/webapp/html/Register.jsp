@@ -38,6 +38,9 @@
         <a class="flex-btn btn" href="${pageContext.request.contextPath}/">
             Back to Home page
         </a>
+        <a class="flex-btn btn" href="${pageContext.request.contextPath}/LostData">
+            Lost username or password
+        </a>
         <a class="flex-btn btn" href="${pageContext.request.contextPath}/Login">
             Already have an account? <br> Log in.
         </a>

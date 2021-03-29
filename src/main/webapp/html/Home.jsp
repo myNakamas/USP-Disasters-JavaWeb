@@ -2,9 +2,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>JSP - Hello World</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000">
+    <link rel="apple-touch-icon" href="web-resources/images/logo/Disaster-logo180x180.png">
+<%--    not sure for the href--%>
     <link rel="stylesheet" href="web-resources/CSS/css.css" type="text/css">
 </head>
 <body>
