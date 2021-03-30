@@ -46,11 +46,6 @@
                 <input class="flex-btn btn" type="submit" value="Search">
             </form>
         </div>
-
-<%--        This is a javascript function to change the theme--%>
-        <div class="btn" onclick="changeTheme('#123','#fff','#123')">ClickME</div>
-
-
         <div class="event-page">
             <%int i=0;%>
             <c:forEach items="${sessionScope.events}" var = "event">

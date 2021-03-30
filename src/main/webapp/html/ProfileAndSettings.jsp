@@ -14,18 +14,52 @@
     <c:import url="components/head.jsp"/>
 </head>
 <body>
-<%--        todo: add settings, customizations and theme changing--%>
-    <div class="vertical-wrapper">
-        <form method="post" action="${pageContext.request.contextPath}/ProfileAndSettings">
-            <div class="settings">
-                    <h2>Theme settings</h2>
-                <div class="border-wrapper">
-                    <div class="theme-dark flex-btn" onclick="changeTheme('#123','#fff','#123')"> Dark Theme</div>
-                    <div class="theme-dimmed flex-btn" onclick="changeTheme('#123','#fff','#123')">Dimmed Theme</div>
-                    <div class="theme-light flex-btn" onclick="changeTheme('#123','#fff','#123')">Light theme</div>
-                </div>
-            </div>
-        </form>
+<div class="box-border-down">
+    <div class="nav-left">
+        <a class="button" href="${pageContext.request.contextPath}/">Back </a>
     </div>
+    <div class="title-box">
+        <h1>Settings</h1>
+    </div>
+</div>
+<div class="vertical-wrapper">
+    <div class="vertical-navigaiton"></div>
+    <div class="settings-container">
+    <form method="post" action="${pageContext.request.contextPath}/ProfileAndSettings">
+        <div class="settings">
+            <h2>Theme settings</h2>
+            <div class="border-wrapper">
+                <div class="theme-dark flex-btn" onclick="changeTheme(0)"><input type="radio" id="dark" name="theme" value="0">
+                    <label for="dark">Dark Theme</label></div>
+                <div class="theme-dimmed flex-btn" onclick="changeTheme(1)"><input type="radio" id="dimmed" name="theme" value="1">
+                    <label for="dimmed">Dimmed Theme</label></div>
+                <div class="theme-light flex-btn" onclick="changeTheme(2)"><input type="radio" id="light" name="theme" value="2">
+                    <label for="light">Light theme</label></div>
+            </div>
+            <div class="border-wrapper">
+                <div class="orange-btn flex-btn" onclick="changePrimColor(0)"><input type="radio" id="orange" name="color" value="0">
+                    <label for="orange"> Orange</label></div>
+                <div class="purple-btn flex-btn" onclick="changePrimColor(1)"><input type="radio" id="purple" name="color" value="1">
+                    <label for="purple"> Purple</label></div>
+                <div class="cyan-btn flex-btn" onclick="changePrimColor(2)"><input type="radio" id="cyan" name="color" value="2">
+                    <label for="cyan">Cyan</label></div>
+            </div>
+        </div>
+        <div class="settings">
+            <h2>Personal settings </h2>
+            <div class="">
+                <%--                    todo: add more settings like profile picture--%>
+                <label>
+                    <input class="textbox" type="text" placeholder="username"/>
+                </label>
+                <label>
+                    <input class="textbox" type="text" placeholder="pass"/>
+                </label>
+            </div>
+        </div>
+        <input class="btn vertical-button" type="submit" value="Save">
+    </form>
+    </div>
+</div>
 </body>
 </html>

@@ -30,7 +30,7 @@ public class RegisterServlet extends HttpServlet {
             //TODO: all the verifications
 
             //TODO: Check for the username in the database
-
+            //mark the username pass and
             User user = new User(username,password,email,phone);
 
             UserService userService= new UserService();
