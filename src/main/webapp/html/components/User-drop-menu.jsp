@@ -1,4 +1,4 @@
-<%--
+<%@ page import="java.io.IOException" %><%--
   Created by IntelliJ IDEA.
   User: Angel
   Date: 21-Mar-21
@@ -9,10 +9,15 @@
 <div class="dropdown">
     <img class="profile-pic" src="" alt="">
     <div class="dropdown-content">
-            <a>Profile</a>
-            <a>Preferred searches</a>
-            <a>Change theme</a>
-            <a>Notification settings</a>
+            <a href="${pageContext.request.contextPath}/ProfileAndSettings">Profile</a>
+            <a onclick=<% logOut(session,response);%> >Log out</a>
     </div>
 </div>
-<%--Todo: redirect the user to the corresponding pages.--%>
+
+<%!
+    private void logOut(HttpSession session, HttpServletResponse response) throws IOException {
+        session.removeAttribute("user");
+        //when we implement cookies, remove the user as well
+        response.sendRedirect("/");
+    }
+%>

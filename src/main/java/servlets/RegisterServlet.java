@@ -1,6 +1,6 @@
 package servlets;
 
-import models.User;
+import models.entities.User;
 import services.UserService;
 
 import javax.servlet.*;
@@ -43,7 +43,7 @@ public class RegisterServlet extends HttpServlet {
             System.out.println(e.getMessage());
             request.setAttribute("error",e.getMessage());
             //refresh the page
-            response.sendRedirect(request.getContextPath()+"/Register");
+            doGet(request,response);
         }
     }
 }

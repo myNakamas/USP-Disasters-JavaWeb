@@ -1,4 +1,4 @@
-package models;
+package models.entities;
 
 
 import javax.persistence.*;
@@ -34,6 +34,13 @@ public class User {
 
     }
 
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
 
     public String getUsername() {
         return username;
