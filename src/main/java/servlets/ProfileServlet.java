@@ -12,8 +12,17 @@ public class ProfileServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //change the selected settings
+        String color = request.getParameter("color");
+        String theme = request.getParameter("theme");
+        System.out.println("color = "+color);
+        System.out.println("theme = "+theme);
+
+        Cookie themeCookie= new Cookie("theme_c",color+theme);
+        response.addCookie(themeCookie);
+
+        doGet(request, response);
 
     }
 }

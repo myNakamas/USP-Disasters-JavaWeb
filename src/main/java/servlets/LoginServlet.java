@@ -43,7 +43,7 @@ public class LoginServlet extends HttpServlet {
                     //we are getting the ip just to check if its from the same device.
                     UserCookieService cookieService = new UserCookieService();
                     cookieService.persist(userCookie);      //FIXME: error:userId doesnt have a default value?
-                   // UserCookie rememberCookie = new Cookie("remember", Long.toString(userCookie.getCookie_id()));
+                   // Cookie rememberCookie = new Cookie("remember", Long.toString(userCookie.getCookie_id()));
                    // response.addCookie(rememberCookie);
                 }
                 response.sendRedirect(request.getContextPath()+"/");

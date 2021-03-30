@@ -3,20 +3,20 @@
     --second-color: #ef7030;
     --third-color: #c86432;
     --anti-color: #171718;
-/*Light:
-    --base-color: #171718;
-    --anti-color: #fff;
+    /*Light:
+        --base-color: #171718;
+        --anti-color: #fff;
 
-Dimmed:
-        --anti-color: #5d5d5d;
+    Dimmed:
+            --anti-color: #5d5d5d;
 
-Different primary colors:
-    #8462c8 - tako purpl
-    #6fb4b7 - bebe blu
-    #70b979 - snek
-    #d85a5a - thursty
+    Different primary colors:
+        #8462c8 - tako purpl
+        #2fa1a6 - bebe blu
+        #70b979 - snek
+        #d85a5a - thursty
 
-*/
+    */
 }
 body{
     background-color:var(--anti-color);
@@ -213,4 +213,47 @@ h3.event-title {
     bottom: 0;
     width: 100%;
     text-align: center;
+}
+.settings {
+    padding: 40px;
+}
+
+.vertical-wrapper {
+    margin: 0 12.5%;
+    text-align: center;
+    border-color: var(--base-color);
+    border-width: 2px;
+    border-style: none solid solid solid;
+}
+.border-wrapper {
+    display: flex;
+    border: 2px solid var(--second-color);
+    border-radius: 10px;
+    background-color: rgba(var(--second-color), 0.8);
+}
+.theme-dark {
+    background-color: #171718;
+    color: white;
+}
+.theme-dimmed {
+    background-color: #5d5d5d;
+    color: white;
+}
+.theme-light {
+    background-color: #fff;
+    color: black;
+}
+.orange-btn {
+    background-color: #ef7030;
+}
+.cyan-btn {
+    background-color: #2fa1a6;
+}
+.purple-btn{
+    background-color:#8462c8;
+}
+.theme-dark, .theme-dimmed, .theme-light, .orange-btn, .purple-btn, .cyan-btn {
+    padding: 20px;
+    border: 2px solid;
+    border-radius: 20px;
 }

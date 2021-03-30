@@ -45,11 +45,15 @@ public class HomeServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         try {
-        String country = request.getParameter("country");
-        String countryCode = country.substring(country.indexOf(':')+1);
-        System.out.println(countryCode);
-        events = ApiPredictHQ.FilteredSearch(countryCode);
 
+
+        String country = request.getParameter("country");
+            if(country.isBlank()) events = ApiPredictHQ.basicSearch();
+            else {
+                String countryCode = country.substring(country.indexOf(':') + 1);
+                System.out.println(countryCode);
+                events = ApiPredictHQ.FilteredSearch(countryCode);
+            }
         HttpSession session = request.getSession();
         session.setAttribute("events",events);
 
