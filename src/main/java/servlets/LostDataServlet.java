@@ -11,10 +11,11 @@ public class LostDataServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher view = request.getRequestDispatcher("html/LostData.jsp");
         view.forward(request, response);
+        //this displays the html on the page
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //        ToDO:
 //         receive email from request, send notification to the email if its in the database
 //         reset the pass of the user and send him the new one

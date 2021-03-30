@@ -73,6 +73,7 @@ a{
     border-radius: 10px;
     border: none;
 }
+
 .btn {
     text-decoration:none;
     background-color: var(--second-color);
