@@ -1,19 +1,19 @@
 package dao;
 
 import dao.interfaces.DaoInterface;
-import models.entities.User;
+import models.entities.UserCookie;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import util.HibernateUtil;
 
 import java.util.List;
 
-public class UserDAO implements DaoInterface<User> {
+public class UserCookieDAO implements DaoInterface<UserCookie> {
     private Session currentSession;
 
     private Transaction currentTransaction;
 
-    public UserDAO(){
+    public UserCookieDAO(){
 
     }
 
@@ -53,29 +53,29 @@ public class UserDAO implements DaoInterface<User> {
         this.currentTransaction = currentTransaction;
     }
 
-    public void persist(User entity) {
+    public void persist(UserCookie entity) {
         getCurrentSession().save(entity);
     }
 
-    public void update(User entity) {
+    public void update(UserCookie entity) {
         getCurrentSession().update(entity);
     }
 
-    public User findById(int id) {
-        return getCurrentSession().get(User.class, id);
+    public UserCookie findById(int id) {
+        return getCurrentSession().get(UserCookie.class, id);
     }
-    public void delete(User entity) {
+    public void delete(UserCookie entity) {
         getCurrentSession().delete(entity);
     }
 
     @SuppressWarnings("unchecked")
-    public List<User> findAll() {
-        return (List<User>) getCurrentSession().createQuery("from User").list();
+    public List<UserCookie> findAll() {
+        return (List<UserCookie>) getCurrentSession().createQuery("from UserCookie").list();
     }
 
     public void deleteAll() {
-        List<User> entityList = findAll();
-        for (User entity : entityList) {
+        List<UserCookie> entityList = findAll();
+        for (UserCookie entity : entityList) {
             delete(entity);
         }
     }

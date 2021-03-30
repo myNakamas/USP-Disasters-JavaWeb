@@ -37,6 +37,14 @@
         <url-pattern>/Register</url-pattern>
     </servlet-mapping>
     <servlet>
+        <servlet-name>LostDataServlet</servlet-name>
+        <servlet-class>servlets.LostDataServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LostDataServlet</servlet-name>
+        <url-pattern>/LostData</url-pattern>
+    </servlet-mapping>
+    <servlet>
         <servlet-name>Event-detail-servlet</servlet-name>
         <servlet-class>servlets.EventServlet</servlet-class>
     </servlet>
@@ -44,4 +52,13 @@
         <servlet-name>Event-detail-servlet</servlet-name>
         <url-pattern>/EventDetails</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>ProfileServlet</servlet-name>
+        <servlet-class>servlets.ProfileServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ProfileServlet</servlet-name>
+        <url-pattern>/ProfileAndSettings</url-pattern>
+    </servlet-mapping>
+
 </web-app>

@@ -5,20 +5,15 @@
 <html lang="en">
 <head>
     <title>Disasters</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#000">
-    <meta name="Description" content="A Website displaying information about the Disasters around the world.">
-    <link rel="apple-touch-icon" href="web-resources/images/logo/Disaster-logo180x180.png">
-    <link rel="icon" type="image/gif" href="web-resources/images/logo/Disaster-logo32x32.png">
-    <link rel="manifest" href="web-resources/json/manifest.json">
-<%--    not sure for the href--%>
-    <link rel="stylesheet" href="web-resources/CSS/css.css" type="text/css">
-    <script src="js/themeFunctions.js"></script>
+    <c:import url="components/head.jsp"/>
 </head>
 <body>
     <nav class="navigation-bar">
+        <div class="nav-left">
+
+        </div>
         <div class = "logo"></div>
-            <h1 class="header-title">Disaster information</h1>
+            <a href="${pageContext.request.contextPath}/"><h1 class="header-title">Disaster information</h1></a>
         <div class="nav-right">
 <%--            <% if(session.getAttribute("currentUser")==null)  This is one way to make an if statement with jsp--%>
             <c:choose>

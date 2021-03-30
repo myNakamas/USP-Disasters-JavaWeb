@@ -8,10 +8,11 @@
 --%>
 
 <%@ page contentType="text/html;charset=UTF-8" %>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <title>Details</title>
-    <link rel="stylesheet" href="web-resources/CSS/css.css" type="text/css">
+    <c:import url="components/head.jsp"/>
 
 </head>
 <body>

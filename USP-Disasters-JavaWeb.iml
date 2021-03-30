@@ -26,7 +26,9 @@
       <configuration>
         <setting name="validation-enabled" value="true" />
         <setting name="provider-name" value="Hibernate" />
-        <datasource-mapping />
+        <datasource-mapping>
+          <factory-entry name="USP-Disasters-JavaWeb" value="b4c979d1-98d0-48c3-a7f3-2d9e092c49a4" />
+        </datasource-mapping>
         <naming-strategy-map />
       </configuration>
     </facet>

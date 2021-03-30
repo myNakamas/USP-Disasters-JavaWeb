@@ -1,7 +1,7 @@
 package services;
 
 import dao.UserDAO;
-import models.User;
+import models.entities.User;
 
 import java.util.List;
 
@@ -56,15 +56,23 @@ public class UserService {
     }
 
     public User logIn(User user) throws Exception {
-        if(user.getUsername().isBlank() || user.getPassword().isBlank()) throw new Exception("Please fill all fields!");
+        userDao.openCurrentSession();
+        User result = null;
+
+        if(user.getUsername().isBlank() || user.getPassword().isBlank()) {
+            userDao.closeCurrentSession();
+            throw new Exception("Please fill all fields!");
+        }
 
         for(User x : this.findAll())
         {
             if(user.equals(x))
             {
-                return x;
+                result = x;
             }
         }
-        return null;
+        userDao.closeCurrentSession();
+        return result;
     }
+
 }

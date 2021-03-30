@@ -1,6 +1,6 @@
 package util;
 
-import models.User;
+import models.entities.*;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
@@ -21,7 +21,7 @@ public class HibernateUtil {
 
                 Configuration configuration = new Configuration();
 
-                // Hibernate settings equivalent to hibernate.cfg.xml's properties
+                // Hibernate settings equivalent to hibernate.cfg.xml properties
 
                 Properties settings = new Properties();
 
@@ -44,6 +44,7 @@ public class HibernateUtil {
                 configuration.setProperties(settings);
 
                 configuration.addAnnotatedClass(User.class);
+                configuration.addAnnotatedClass(UserCookie.class);
 
                 ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
 
