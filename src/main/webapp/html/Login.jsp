@@ -25,7 +25,6 @@
         <div class="login-left">
             <div class="align-down-right">
                 <form method="post" action="${pageContext.request.contextPath}/Login">
-
                     <label style="display:none;" for="username">Username</label>
                     <input class="textbox" name="username" id="username" type="text" placeholder="Username">
                     <label style="display:none;" for="password">Password</label>

@@ -1,20 +1,34 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
-  User: Angel
-  Date: 29-Mar-21
-  Time: 15:44
+  User: marti
+  Date: 3/30/2021
+  Time: 6:44 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <!DOCTYPE html>
 <html lang = "en">
 <head>
-    <title>Title</title>
+    <title>Lost Data</title>
     <c:import url="components/head.jsp"/>
 </head>
 <body>
-<%--        todo: on input email, reset and send new password to the user--%>
-
+<div class="wrapper">
+    <div class="navigation-bar">
+        <div class="nav-left">
+            <a class="button" href="${pageContext.request.contextPath}/">Back </a>
+        </div>
+        <div class="title-box">
+            <h1 class = "header-text" style = "margin : 0; font-size : 2vmax">Forgotten username or password</h1>
+        </div>
+    </div>
+    <div class=wrapper style = "margin : 15% 0 0 0; " >
+        <p>An email with a reset password link will be sent. Please check your inbox.</p><br>
+        <label style="display:none;" for="email">email</label>
+        <input class="textbox" style = "padding: 15px 50% 15px 10px;" name="email" id="email" type="text" placeholder="e-mail">
+        <a class="button" href="">Reset password </a>
+    </div>
+</div>
 </body>
 </html>
