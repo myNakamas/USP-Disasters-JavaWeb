@@ -1,9 +1,22 @@
 :root {
     --base-color: #fff;
-    --second-color: #b84a13;
+    --second-color: #ef7030;
     --third-color: #c86432;
     --anti-color: #171718;
-    --second-color-dark: #8b280f;
+/*Light:
+    --base-color: #171718;
+    --anti-color: #fff;
+
+Dimmed:
+        --anti-color: #5d5d5d;
+
+Different primary colors:
+    #8462c8 - tako purpl
+    #6fb4b7 - bebe blu
+    #70b979 - snek
+    #d85a5a - thursty
+
+*/
 }
 body{
     background-color:var(--anti-color);
@@ -38,13 +51,11 @@ a{
     background-color:var(--third-color);
     border-radius: 10px;
     border : 3px var(--second-color) solid;
-    /*color : var(--base-color);*/
     display:  inline-flex;
     margin: 6%;
     font-size: 1vmax;
     padding: 0.5vmax 2vmax;
 }
-
 .button:hover {
     background-color: var(--second-color);
     border: 3px var(--third-color) solid;
@@ -74,7 +85,7 @@ a{
 }
 .btn:hover{
     cursor:pointer;
-    background-color: var(--second-color-dark)
+    filter:hue-rotate(-20deg) brightness(0.75);
 }
 .wrapper {
     text-align: center;
@@ -196,7 +207,7 @@ h3.event-title {
 }
 .footer{
     border-top: solid var(--base-color);
-    background-color: var(--second-color-dark);
+    background-color: var(--second-color);
     position: absolute;
     bottom: 0;
     width: 100%;

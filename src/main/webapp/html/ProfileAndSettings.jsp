@@ -15,5 +15,17 @@
 </head>
 <body>
 <%--        todo: add settings, customizations and theme changing--%>
+    <div class="vertical-wrapper">
+        <form method="post" action="${pageContext.request.contextPath}/ProfileAndSettings">
+            <div class="settings">
+                    <h2>Theme settings</h2>
+                <div class="border-wrapper">
+                    <div class="theme-dark flex-btn" onclick="changeTheme('#123','#fff','#123')"> Dark Theme</div>
+                    <div class="theme-dimmed flex-btn" onclick="changeTheme('#123','#fff','#123')">Dimmed Theme</div>
+                    <div class="theme-light flex-btn" onclick="changeTheme('#123','#fff','#123')">Light theme</div>
+                </div>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
