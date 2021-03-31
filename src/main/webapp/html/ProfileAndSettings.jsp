@@ -29,20 +29,33 @@
         <div class="settings">
             <h2>Theme settings</h2>
             <div class="border-wrapper">
-                <div class="theme-dark flex-btn" onclick="changeTheme(0)"><input type="radio" id="dark" name="theme" value="0">
-                    <label for="dark">Dark Theme</label></div>
-                <div class="theme-dimmed flex-btn" onclick="changeTheme(1)"><input type="radio" id="dimmed" name="theme" value="1">
-                    <label for="dimmed">Dimmed Theme</label></div>
-                <div class="theme-light flex-btn" onclick="changeTheme(2)"><input type="radio" id="light" name="theme" value="2">
-                    <label for="light">Light theme</label></div>
+                <label class="theme-dark flex-btn" onclick="changeTheme(0)">
+                    <input type="radio" id="dark" name="theme" value="0">
+                    Dark Theme
+                </label>
+                <label class="theme-dimmed flex-btn" onclick="changeTheme(1)">
+                    <input type="radio" id="dimmed" name="theme" value="1">
+                    Dimmed Theme
+                </label>
+                <label class="theme-light flex-btn" onclick="changeTheme(2)">
+                    <input type="radio" id="light" name="theme" value="2">
+                    Light theme
+                </label>
             </div>
             <div class="border-wrapper">
-                <div class="orange-btn flex-btn" onclick="changePrimColor(0)"><input type="radio" id="orange" name="color" value="0">
-                    <label for="orange"> Orange</label></div>
-                <div class="purple-btn flex-btn" onclick="changePrimColor(1)"><input type="radio" id="purple" name="color" value="1">
-                    <label for="purple"> Purple</label></div>
-                <div class="cyan-btn flex-btn" onclick="changePrimColor(2)"><input type="radio" id="cyan" name="color" value="2">
-                    <label for="cyan">Cyan</label></div>
+                <label class="orange-btn flex-btn"  onclick="changePrimColor(0)">
+                    <input type="radio" id="orange" name="color" value="0">
+                     Orange
+                </label>
+                <label class="purple-btn flex-btn" onclick="changePrimColor(1)">
+
+                    <input type="radio" id="purple" name="color" value="1">
+                     Purple
+                </label>
+                <label class="cyan-btn flex-btn" onclick="changePrimColor(2)">
+                    <input type="radio" id="cyan" name="color" value="2">
+                    Cyan
+                </label>
             </div>
         </div>
         <div class="settings">

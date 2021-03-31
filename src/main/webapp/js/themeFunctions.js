@@ -29,7 +29,7 @@ function changeTheme(i) {
 function changePrimColor(c)
 {
     const Styles =document.documentElement.style;
-    let primary = Styles.getPropertyPriority('--second-color')
+    let primary = Styles.getPropertyPriority('--primary-color')
     switch (c){
         case 0: case "0":
             primary = '#ef7030'
@@ -43,13 +43,15 @@ function changePrimColor(c)
             break;
 
     }
-    Styles.setProperty('--second-color', primary);
+    Styles.setProperty('--primary-color', primary);
 }
 window.onload = function() {
     const c = getCookie("theme_c");
-    console.log(c);
-    changePrimColor(c.charAt(0));
-    changeTheme(c.charAt(1));
+    if(c!=null){
+        console.log(c);
+        changePrimColor(c.charAt(0));
+        changeTheme(c.charAt(1));
+    }
 
 };
 function getCookie(name) {

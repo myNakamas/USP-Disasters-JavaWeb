@@ -36,7 +36,7 @@ public class LoginServlet extends HttpServlet {
         user = userService.logIn(user);
             if(user!=null) {
                 request.getSession().setAttribute("user",user);
-                if(keepLoggedIn.equals("on")) {
+                if(keepLoggedIn != null) {
                     //If the user has checked the keep me logged in, create a cookie that lasts for a long time and send it to the browser
                     //then check if the cookie id is there and if its correct (the same as in the database), log in the correct user (getting him from the database).
                     UserCookie userCookie = new UserCookie(user,"remember", request.getRemoteAddr());
