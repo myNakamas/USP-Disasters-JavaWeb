@@ -16,11 +16,6 @@
 <body>
 <div class="wrapper">
     <h1 class="header-text">Log in</h1>
-    <c:choose>
-        <c:when test="${requestScope.error!=null}">
-            <c:import url="components/ErrorDiv.jsp"/>
-        </c:when>
-    </c:choose>
     <div class="box-border-down">
         <div class="login-left">
             <div class="align-down-right">
@@ -36,6 +31,11 @@
                     <input class="btn vertical-button" type="submit" value="Log in">
 
                 </form>
+                <c:choose>
+                    <c:when test="${requestScope.error!=null}">
+                        <c:import url="components/ErrorDiv.jsp"/>
+                    </c:when>
+                </c:choose>
             </div>
         </div>
         <div class="login-right">

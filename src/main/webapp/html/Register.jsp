@@ -16,11 +16,6 @@
 <body>
 <div class="wrapper">
     <h1 class="header-text">Sign up</h1>
-        <c:choose>
-            <c:when test="${requestScope.error!=null}">
-                <c:import url="components/ErrorDiv.jsp"/>
-            </c:when>
-        </c:choose>
         <div class="vertical">
                 <form method="post" action="${pageContext.request.contextPath}/Register">
 
@@ -34,9 +29,15 @@
                     <input class="textbox" name="password" id="password" type="password" placeholder="Password">
                     <label style="display:none;" for="password2">Password2</label>
                     <input class="textbox" name="password2" id="password2" type="password" placeholder="Rewrite the password">
+
 <%--                    TODO: add Captcha--%>
                     <input class="btn vertical-button" type="submit" value="Register">
                 </form>
+            <c:choose>
+                <c:when test="${requestScope.error!=null}">
+                    <c:import url="components/ErrorDiv.jsp"/>
+                </c:when>
+            </c:choose>
         </div>
     </div>
 
