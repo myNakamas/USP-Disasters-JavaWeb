@@ -18,7 +18,7 @@
 <%--            <% if(session.getAttribute("currentUser")==null)  This is one way to make an if statement with jsp--%>
             <c:choose>
                 <%--suppress ELValidationInJSP --%>
-                <c:when test="${sessionScope.user == null}">
+                <c:when test="${applicationScope.user == null}">
                 <a class= "button" href="${pageContext.request.contextPath}/Login">Log in</a>
                 <a class= "button" href="${pageContext.request.contextPath}/Register">Sign up</a>
                 </c:when>

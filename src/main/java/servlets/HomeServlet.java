@@ -2,6 +2,7 @@ package servlets;
 
 import api.ApiPredictHQ;
 import models.Result;
+import models.entities.User;
 import org.hibernate.Session;
 import util.HibernateUtil;
 
@@ -29,16 +30,20 @@ public class HomeServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        Result this1 = new Result("this");
-//        this1.setDescription("Something happened at the long lost island of virgin islands. No one knows how many bodies are on the bottom of the sea. One of the civilians says that there was an earthquake that was so strong, that the gates of hell opened and a incubus took his wife.");
-//        this1.setCategory("Horror");
-//        events.add(this1);
-//        events.add(new Result("that"));
+        User user = LoginServlet.checkCookie(request);
+
+
         HttpSession session = request.getSession();
         session.setAttribute("events",events);
         response.setContentType("text/html");
-        RequestDispatcher view = request.getRequestDispatcher("html/Home.jsp");
-        view.forward(request, response);
+
+        if(user !=null)
+        {
+            getServletContext().setAttribute("user",user);
+        }
+
+            RequestDispatcher view = request.getRequestDispatcher("html/Home.jsp");
+            view.forward(request, response);
 
     }
 

@@ -9,18 +9,26 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet(name = "LoginServlet")
 public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher view = request.getRequestDispatcher("html/Login.jsp");
-        view.forward(request, response);
-
         //check if the remember cookie is there, if its valid, and if yes, yeet the user out of this page.
         //otherwise, let him log in
-
+        User user = LoginServlet.checkCookie(request);
+        if(user !=null)
+        {
+            getServletContext().setAttribute("user",user);
+            response.sendRedirect(request.getContextPath()+"/");
+        }
+        else {
+            RequestDispatcher view = request.getRequestDispatcher("html/Login.jsp");
+            view.forward(request, response);
+        }
     }
+
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -28,23 +36,27 @@ public class LoginServlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String keepLoggedIn = request.getParameter("keepLoggedIn");
-        User user = new User();
-        user.setUsername(username);
-        user.setPassword(password);
+        User inputUser = new User();
+        inputUser.setUsername(username);
+        inputUser.setPassword(password);
 
         UserService userService = new UserService();
-        user = userService.logIn(user);
+        User user = userService.logIn(inputUser);
             if(user!=null) {
-                request.getSession().setAttribute("user",user);
+//                request.getSession().setAttribute("user",user);
+                request.getServletContext().setAttribute("user",user);
                 if(keepLoggedIn != null) {
                     //If the user has checked the keep me logged in, create a cookie that lasts for a long time and send it to the browser
                     //then check if the cookie id is there and if its correct (the same as in the database), log in the correct user (getting him from the database).
                     UserCookie userCookie = new UserCookie(user,"remember", request.getRemoteAddr());
                     //we are getting the ip just to check if its from the same device.
                     UserCookieService cookieService = new UserCookieService();
-                    cookieService.persist(userCookie);      //FIXME: error:userId doesnt have a default value?
-                   // Cookie rememberCookie = new Cookie("remember", Long.toString(userCookie.getCookie_id()));
-                   // response.addCookie(rememberCookie);
+                    cookieService.persist(userCookie);
+                    Cookie rememberCookie = new Cookie("remember", Long.toString(userCookie.getCookie_id()));
+                    rememberCookie.setMaxAge(60*60*24*365); //one year
+                    response.addCookie(rememberCookie);
+
+                    getServletContext().setAttribute("user",user);
                 }
                 response.sendRedirect(request.getContextPath()+"/");
             }
@@ -57,4 +69,20 @@ public class LoginServlet extends HttpServlet {
             doGet(request, response);
         }
     }
+
+    static User checkCookie(HttpServletRequest request) {
+        User user = null;
+        for(Cookie cookie : request.getCookies())
+        {
+            if(cookie.getName().equals("remember"))
+            {
+                UserCookieService cookieService = new UserCookieService();
+                user = cookieService.checkCookie(cookie.getValue(),request.getRemoteAddr());
+                break;
+            }
+        }
+        return user;
+    }
 }
+
+

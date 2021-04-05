@@ -158,12 +158,13 @@ table, th, td {
 .profile-pic {
     width: 70px;
     height: 70px;
-    margin: 0 70px;
+    margin: 8px 70px;
 }
 .dropdown-content {
     display: none;
     background-color: var(--base-color);
     z-index: 1;
+    position: fixed;
 }
 .dropdown-content a {
     color: var(--anti-color);
@@ -173,6 +174,8 @@ table, th, td {
 }
 .dropdown:hover .dropdown-content {
     display: block;
+    text-align-last: center;
+    width: 210px;
 }
 .dropdown-content a:hover {background-color:var(--primary-color);}
 

@@ -24,11 +24,13 @@ public class User {
     @Column(name = "phone")
     private String phone;
 
-    public User(String username, String password, String email, String phone) {
+    @Column(name = "picture")
+    private String picture;
+
+    public User(String username, String password, String email) {
         this.username = username;
         this.password = password;
         this.email = email;
-        this.phone = phone;
     }
     public User() {
 
@@ -74,7 +76,13 @@ public class User {
         this.phone = phone;
     }
 
+    public String getPicture() {
+        return picture;
+    }
 
+    public void setPicture(String picture) {
+        this.picture = picture;
+    }
 
     @Override
     public boolean equals(Object o) {

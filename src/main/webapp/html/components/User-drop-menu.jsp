@@ -7,17 +7,21 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8"%>
 <div class="dropdown">
-    <img class="profile-pic" src="" alt="">
+    <img class="profile-pic" src="web-resources/images/userPic/image.png" alt="">
     <div class="dropdown-content">
             <a href="${pageContext.request.contextPath}/ProfileAndSettings">Profile</a>
-            <a onclick=<% logOut(session,response);%> >Log out</a>
+            <a href="">Log out</a>
+<%--        TODO: Add a logout page and add its functionality--%>
     </div>
 </div>
 
 <%!
-    private void logOut(HttpSession session, HttpServletResponse response) throws IOException {
-        session.removeAttribute("user");
-        //when we implement cookies, remove the user as well
-        response.sendRedirect("/");
+    private void logOut(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        request.getServletContext().removeAttribute("user");
+        Cookie cookie = new Cookie("remember","");
+        cookie.setMaxAge(0);
+        response.addCookie(cookie);
+        response.sendRedirect(request.getContextPath()+"/");
     }
+
 %>

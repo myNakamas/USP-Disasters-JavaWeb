@@ -1,6 +1,7 @@
 package services;
 
 import dao.UserCookieDAO;
+import models.entities.User;
 import models.entities.UserCookie;
 
 import java.util.List;
@@ -53,5 +54,19 @@ public class UserCookieService {
 
     public UserCookieDAO userDao() {
         return userCookieDao;
+    }
+
+    public User checkCookie(String value, String remoteAddr) {
+        User user = null;
+        userCookieDao.openCurrentSession();
+        for(UserCookie userCookie : this.findAll()){
+            if(userCookie.getCookie_id()==Long.parseLong(value) && userCookie.getIp_address().equals(remoteAddr))
+            {
+                user = userCookie.getUser();
+                break;
+            }
+        }
+        userCookieDao.closeCurrentSession();
+        return user;
     }
 }

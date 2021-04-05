@@ -7,6 +7,5 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <div class="error-container">
-<%--    todo: customize this--%>
     ${requestScope.error}
 </div>

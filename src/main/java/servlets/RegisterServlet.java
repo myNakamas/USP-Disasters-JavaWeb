@@ -26,12 +26,16 @@ public class RegisterServlet extends HttpServlet {
         String phone = request.getParameter("phone");
 
         try {
-            if(username.equals("")||email.equals("")||password.equals("")|| password2.equals("")||phone.equals("")) throw new Exception("Fill all the fields!");
+            if(username.equals("")||email.equals("")||password.equals("")|| password2.equals("")) throw new Exception("Fill all the fields!");
+            if(!password.equals(password2)) throw new Exception("Passwords do not match!");
+
             //TODO: all the verifications
 
             //TODO: Check for the username in the database
             //mark the username pass and
-            User user = new User(username,password,email,phone);
+            User user = new User(username,password,email);
+
+
 
             UserService userService= new UserService();
             userService.persist(user);
