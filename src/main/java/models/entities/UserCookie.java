@@ -1,12 +1,12 @@
 package models.entities;
 
 import javax.persistence.*;
+import java.util.Random;
 
 @Entity
 @Table(name="userCookie")
 public class UserCookie {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "cookie_id", unique = true, nullable = false)
     private long cookie_id;
 
@@ -21,11 +21,14 @@ public class UserCookie {
     private String ip_address;
 
     public UserCookie() {
+        Random rand = new Random();
         //generate the cookie id
+        cookie_id = rand.nextLong();
     }
     public UserCookie(User user, String title, String ip_address) {
+        Random rand = new Random();
         //generate the cookie id
-
+        cookie_id = rand.nextLong();
         this.user=user;
         this.cookieTitle=title;
         this.ip_address=ip_address;
