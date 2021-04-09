@@ -1,5 +1,6 @@
 package servlets;
 
+import com.google.api.Http;
 import models.entities.User;
 import models.entities.UserCookie;
 import services.UserCookieService;
@@ -20,7 +21,7 @@ public class LoginServlet extends HttpServlet {
         User user = LoginServlet.checkCookie(request);
         if(user !=null)
         {
-            getServletContext().setAttribute("user",user);
+            request.getSession().setAttribute("user",user);
             response.sendRedirect(request.getContextPath()+"/");
         }
         else {
@@ -33,34 +34,50 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        String keepLoggedIn = request.getParameter("keepLoggedIn");
-        User inputUser = new User();
-        inputUser.setUsername(username);
-        inputUser.setPassword(password);
+            User inputUser = new User();
 
-        UserService userService = new UserService();
-        User user = userService.logIn(inputUser);
-            if(user!=null) {
-//                request.getSession().setAttribute("user",user);
-                request.getServletContext().setAttribute("user",user);
-                if(keepLoggedIn != null) {
-                    //If the user has checked the keep me logged in, create a cookie that lasts for a long time and send it to the browser
-                    //then check if the cookie id is there and if its correct (the same as in the database), log in the correct user (getting him from the database).
-                    UserCookie userCookie = new UserCookie(user,"remember", request.getRemoteAddr());
-                    //we are getting the ip just to check if its from the same device.
-                    UserCookieService cookieService = new UserCookieService();
-                    cookieService.persist(userCookie);
-                    Cookie rememberCookie = new Cookie("remember", Long.toString(userCookie.getCookie_id()));
-                    rememberCookie.setMaxAge(60*60*24*365); //one year
-                    response.addCookie(rememberCookie);
+            String email = request.getParameter("email");
+            String username = request.getParameter("username");
+            String password = request.getParameter("password");
+            String keepLoggedIn = request.getParameter("keepLoggedIn");
 
-                    getServletContext().setAttribute("user",user);
+            UserService userService = new UserService();
+            if(email!=null){    //Login with google
+                User user = userService.findByUsername(username);
+                if(user!=null){
+                    request.getSession(false).invalidate();
+                    request.getSession().setAttribute("user", user);
                 }
-                response.sendRedirect(request.getContextPath()+"/");
+                else{
+                    user = new User(username,null,email,null);
+                    userService.persist(user);
+                }
+
+            }else {             //Manual login
+                inputUser.setUsername(username);
+                inputUser.setPassword(password);
+
+                User user = userService.logIn(inputUser);
+                if (user != null) {
+
+                    request.getSession(false).invalidate();
+                    request.getSession().setAttribute("user", user);
+
+                    if (keepLoggedIn != null) {
+                        //If the user has checked the keep me logged in, create a cookie that lasts for a long time and send it to the browser
+                        //then check if the cookie id is there and if its correct (the same as in the database), log in the correct user (getting him from the database).
+                        UserCookie userCookie = new UserCookie(user, "remember", request.getRemoteAddr());
+                        //we are getting the ip just to check if its from the same device.
+                        UserCookieService cookieService = new UserCookieService();
+                        cookieService.persist(userCookie);
+                        Cookie rememberCookie = new Cookie("remember", Long.toString(userCookie.getCookie_id()));
+                        rememberCookie.setMaxAge(60 * 60 * 24 * 365); //one year
+                        response.addCookie(rememberCookie);
+                    }
+                    response.sendRedirect(request.getContextPath() + "/");
+
+                } else throw new Exception("Username or password are incorrect!");
             }
-            else throw new Exception("Username or password are incorrect!");
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -72,10 +89,12 @@ public class LoginServlet extends HttpServlet {
 
     static User checkCookie(HttpServletRequest request) {
         User user = null;
+        HttpSession session = request.getSession(false);
         for(Cookie cookie : request.getCookies())
         {
             if(cookie.getName().equals("remember"))
             {
+
                 UserCookieService cookieService = new UserCookieService();
                 user = cookieService.checkCookie(cookie.getValue(),request.getRemoteAddr());
                 break;

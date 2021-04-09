@@ -75,4 +75,17 @@ public class UserService {
         return result;
     }
 
+    public User findByUsername(String username) {
+        userDao.openCurrentSession();
+        User result = null;
+        for(User x : this.findAll())
+        {
+            if(x.getUsername().equals(username))
+            {
+                result = x;
+            }
+        }
+        userDao.closeCurrentSession();
+        return result;
+    }
 }

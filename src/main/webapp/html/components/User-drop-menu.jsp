@@ -10,18 +10,7 @@
     <img class="profile-pic" src="web-resources/images/userPic/image.png" alt="">
     <div class="dropdown-content">
             <a href="${pageContext.request.contextPath}/ProfileAndSettings">Profile</a>
-            <a href="">Log out</a>
+            <a href="${pageContext.request.contextPath}/Logout">Log out</a>
 <%--        TODO: Add a logout page and add its functionality--%>
     </div>
 </div>
-
-<%!
-    private void logOut(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        request.getServletContext().removeAttribute("user");
-        Cookie cookie = new Cookie("remember","");
-        cookie.setMaxAge(0);
-        response.addCookie(cookie);
-        response.sendRedirect(request.getContextPath()+"/");
-    }
-
-%>
