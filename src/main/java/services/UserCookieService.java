@@ -32,7 +32,7 @@ public class UserCookieService {
         return userCookie;
     }
 
-    public void delete(int id) {
+    public void delete(long id) {
         userCookieDao.openCurrentSessionwithTransaction();
         UserCookie userCookie = userCookieDao.findById(id);
         userCookieDao.delete(userCookie);

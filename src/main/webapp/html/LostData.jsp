@@ -20,13 +20,14 @@
             <a class="button" href="${pageContext.request.contextPath}/">Back </a>
         </div>
         <div class="title-box">
-            <h1 class = "header-text" style = "margin : 0; font-size : 2vmax">Forgotten username or password</h1>
+            <h1 class = "header-title" >Forgotten username or password</h1>
         </div>
     </div>
-    <div class=wrapper style = "margin : 15% 0 0 0; " >
+    <div class="vertical" >
         <p>An email with a reset password link will be sent. Please check your inbox.</p><br>
-        <label style="display:none;" for="email">email</label>
-        <input class="textbox" style = "padding: 15px 50% 15px 10px;" name="email" id="email" type="text" placeholder="e-mail">
+        <label>
+        <input class="textbox vertical-button width30per"  name="email" type="email" placeholder="E-mail">
+        </label>
         <a class="button" href="">Reset password </a>
     </div>
 </div>

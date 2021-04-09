@@ -15,10 +15,9 @@
         <div class = "logo"></div>
             <a href="${pageContext.request.contextPath}/"><h1 class="header-title">Disaster information</h1></a>
         <div class="nav-right">
-<%--            <% if(session.getAttribute("currentUser")==null)  This is one way to make an if statement with jsp--%>
             <c:choose>
                 <%--suppress ELValidationInJSP --%>
-                <c:when test="${applicationScope.user == null}">
+                <c:when test="${sessionScope.user == null}">
                 <a class= "button" href="${pageContext.request.contextPath}/Login">Log in</a>
                 <a class= "button" href="${pageContext.request.contextPath}/Register">Sign up</a>
                 </c:when>
@@ -49,7 +48,7 @@
         <div class="event-page">
             <%int i=0;%>
             <c:forEach items="${sessionScope.events}" var = "event">
-                <% request.getSession().setAttribute("i",i++);%>
+                <% request.setAttribute("i",i++);%>
                 <jsp:include page="components/EventDiv.jsp"/>
             </c:forEach>
         </div>

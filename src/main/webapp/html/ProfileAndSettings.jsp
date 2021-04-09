@@ -29,6 +29,7 @@
         <div class="settings">
             <h2>Personal settings </h2>
             <div class="">
+                <%--  missing functionality
                 <label>
                     <input class="textbox" type="text" placeholder="username"/>
                 </label>
@@ -36,6 +37,7 @@
                     <input class="textbox" type="text" placeholder="pass"/>
                 </label>
                     <input class="btn" type="file" name="upload-profile-pic" value=""/>
+                --%>
             </div>
         </div>
         <div class="settings">
@@ -65,7 +67,7 @@
                      Purple
                 </label>
                 <label class="cyan-btn flex-btn" onclick="changePrimColor(2)">
-                    <input type="radio" id="cyan" name="color" value="2"<c:if test="${requestScope.color}=='2'"> checked </c:if>>
+                    <input type="radio" id="cyan" name="color" value="2">
                     Cyan
                 </label>
             </div>

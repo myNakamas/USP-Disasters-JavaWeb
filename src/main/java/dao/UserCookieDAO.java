@@ -8,7 +8,7 @@ import util.HibernateUtil;
 
 import java.util.List;
 
-public class UserCookieDAO implements DaoInterface<UserCookie> {
+public class UserCookieDAO {
     private Session currentSession;
 
     private Transaction currentTransaction;
@@ -61,7 +61,7 @@ public class UserCookieDAO implements DaoInterface<UserCookie> {
         getCurrentSession().update(entity);
     }
 
-    public UserCookie findById(int id) {
+    public UserCookie findById(long id) {
         return getCurrentSession().get(UserCookie.class, id);
     }
     public void delete(UserCookie entity) {

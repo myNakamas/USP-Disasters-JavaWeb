@@ -11,6 +11,9 @@
 <html lang="en">
 <head>
     <title>Title</title>
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="5854060308-35tspmh27ummf2ve626e05icp7tbd3p0">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <c:import url="components/head.jsp"/>
 </head>
 <body>
@@ -40,12 +43,10 @@
         </div>
         <div class="login-right">
             <div class="align-down-left">
-            <button class="btn vertical-button">
-            Login with Google
-            </button>
-            <button class="btn vertical-button">
-            Login with Facebook
-            </button>
+                <div class="g-signin2 vertical-button" data-onsuccess="onSignIn"></div>
+                <button class="btn vertical-button">
+                Login with Facebook
+                </button>
             </div>
         </div>
     </div>

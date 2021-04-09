@@ -30,20 +30,19 @@ public class HomeServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html");
+
         User user = LoginServlet.checkCookie(request);
 
-
-        HttpSession session = request.getSession();
-        session.setAttribute("events",events);
-        response.setContentType("text/html");
+        request.getSession().setAttribute("events",events);
 
         if(user !=null)
         {
             getServletContext().setAttribute("user",user);
         }
 
-            RequestDispatcher view = request.getRequestDispatcher("html/Home.jsp");
-            view.forward(request, response);
+        RequestDispatcher view = request.getRequestDispatcher("html/Home.jsp");
+        view.forward(request, response);
 
     }
 
@@ -59,11 +58,8 @@ public class HomeServlet extends HttpServlet {
                 System.out.println(countryCode);
                 events = ApiPredictHQ.FilteredSearch(countryCode);
             }
-        HttpSession session = request.getSession();
-        session.setAttribute("events",events);
 
-        RequestDispatcher view = request.getRequestDispatcher("html/Home.jsp");
-        view.forward(request, response);
+        doGet(request,response);
 
         } catch (InterruptedException e) {
             e.printStackTrace();

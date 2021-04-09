@@ -121,6 +121,7 @@ h1.header-text {
     float : right;
     width : 50%;
     margin : 0 50px 0 0;
+    text-align: left;
 }
 table, th, td {
     border: 3px solid var(--anti-color);
@@ -271,4 +272,7 @@ h3.event-title {
     border: 2px solid #f66666;
     border-radius: 20px;
     padding: 20px;
+}
+.width30per{
+    width:30%;
 }
