@@ -38,7 +38,7 @@ public class HomeServlet extends HttpServlet {
 
         if(user !=null)
         {
-            getServletContext().setAttribute("user",user);
+            request.getSession().setAttribute("user",user);
         }
 
         RequestDispatcher view = request.getRequestDispatcher("html/Home.jsp");
