@@ -23,13 +23,15 @@
             <h1 class = "header-title" >Forgotten username or password</h1>
         </div>
     </div>
-    <div class="vertical" >
-        <p>An email with a reset password link will be sent. Please check your inbox.</p><br>
-        <label>
-        <input class="textbox vertical-button width30per"  name="email" type="email" placeholder="E-mail">
-        </label>
-        <a class="button" href="">Reset password </a>
-    </div>
+    <form action = "${pageContext.request.contextPath}/LostData" method = post>
+        <div class="vertical" >
+            <p>An email with your username and password will be sent. Please check your inbox.</p><br>
+            <label>
+            <input class="textbox vertical-button width30per"  name="email" type="email" placeholder="E-mail">
+            </label>
+            <input type = "submit" class="button" value = "Send username and password ">
+        </div>
+    </form>
 </div>
 </body>
 </html>

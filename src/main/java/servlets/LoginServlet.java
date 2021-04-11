@@ -1,6 +1,6 @@
 package servlets;
 
-import com.google.api.Http;
+
 import models.entities.User;
 import models.entities.UserCookie;
 import services.UserCookieService;
