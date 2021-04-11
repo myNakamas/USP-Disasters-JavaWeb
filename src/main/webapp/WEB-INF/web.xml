@@ -69,7 +69,7 @@
 
     <context-param>
         <param-name>port</param-name>
-        <param-value>465</param-value>
+        <param-value>587</param-value>
     </context-param>
 
     <context-param>
