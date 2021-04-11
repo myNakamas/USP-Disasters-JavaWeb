@@ -88,4 +88,18 @@ public class UserService {
         userDao.closeCurrentSession();
         return result;
     }
+
+    public User findByEmail(String email) {
+        userDao.openCurrentSession();
+        User result = null;
+        for(User x : this.findAll())
+        {
+            if(x.getEmail().equals(email))
+            {
+                result = x;
+            }
+        }
+        userDao.closeCurrentSession();
+        return result;
+    }
 }
