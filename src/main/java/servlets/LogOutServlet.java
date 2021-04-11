@@ -20,15 +20,11 @@ public class LogOutServlet extends HttpServlet {
             if(cookie.getName().equals("remember"))
             {
                 cookieService.delete(Long.parseLong(cookie.getValue()));
+                cookie.setMaxAge(0);
+                response.addCookie(cookie);
                 break;
             }
         }
-
-
-        Cookie cookie = new Cookie("remember","");
-        cookie.setMaxAge(0);
-        response.addCookie(cookie);
-
         session.invalidate();
 
         response.sendRedirect(request.getContextPath()+"/");

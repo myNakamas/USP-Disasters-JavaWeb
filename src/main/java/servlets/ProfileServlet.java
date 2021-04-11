@@ -4,6 +4,7 @@ import javax.servlet.*;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.*;
 import java.io.IOException;
+import java.util.List;
 
 @MultipartConfig
 public class ProfileServlet extends HttpServlet {
@@ -26,15 +27,20 @@ public class ProfileServlet extends HttpServlet {
         //change the selected settings
         String color = request.getParameter("color");
         String theme = request.getParameter("theme");
-        for(Cookie themeCookie : request.getCookies()){
+        Cookie[] cookies = request.getCookies();
+        Cookie cookie = new Cookie("theme_c","00");
+        for(Cookie themeCookie : cookies ){
             if(themeCookie.getName().equals("theme_c")) {
-                if(color==null) color = Character.toString(themeCookie.getValue().charAt(0));
-                if(theme==null) theme = Character.toString(themeCookie.getValue().charAt(1));
-                themeCookie = new Cookie("theme_c", color + theme);
-                response.addCookie(themeCookie);
+                cookie = themeCookie;
                 break;
             }
         }
+        //if any of the inputs are null, they get the last value
+        if(color==null) color = Character.toString(cookie.getValue().charAt(0));
+        if(theme==null) theme = Character.toString(cookie.getValue().charAt(1));
+
+        cookie = new Cookie("theme_c", color + theme);
+        response.addCookie(cookie);
         doGet(request, response);
 
     }
