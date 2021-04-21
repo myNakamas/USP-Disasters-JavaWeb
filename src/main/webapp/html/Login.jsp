@@ -22,7 +22,7 @@
     <div class="box-border-down">
         <div class="login-left">
             <div class="align-down-right">
-                <form method="post" action="${pageContext.request.contextPath}/Login">
+                <form method="post" action="${pageContext.request.contextPath}/Login" id="loginForm">
                     <label style="display:none;" for="username">Username</label>
                     <input class="textbox" name="username" id="username" type="text" placeholder="Username">
                     <label style="display:none;" for="password">Password</label>
@@ -31,6 +31,7 @@
                         <input type="checkbox" id="keepLoggedIn" name="keepLoggedIn">
                         <label for="keepLoggedIn">Keep me logged in</label>
                     </div>
+                    <input type="hidden" id="google-token"  name="googleToken"/>
                     <input class="btn vertical-button" type="submit" value="Log in">
 
                 </form>
@@ -43,7 +44,7 @@
         </div>
         <div class="login-right">
             <div class="align-down-left">
-                <div class="g-signin2 vertical-button" data-onsuccess="onSignIn"></div>
+<%--                <div class="g-signin2 vertical-button" data-onsuccess="onSignIn"></div>--%>
                 <button class="btn vertical-button">
                 Login with Facebook
                 </button>
