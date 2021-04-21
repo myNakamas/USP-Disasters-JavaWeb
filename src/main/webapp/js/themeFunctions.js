@@ -71,6 +71,7 @@ function getCookie(name) {
     // Useful data for your client-side scripts:
     //var profile = googleUser.getBasicProfile();
 /*    console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+
     console.log('Full Name: ' + profile.getName());
     console.log('Given Name: ' + profile.getGivenName());
     console.log('Family Name: ' + profile.getFamilyName());
@@ -84,5 +85,4 @@ function getCookie(name) {
     console.log("ID Token: " + id_token);
     document.getElementById("google-token").value = id_token;
     document.getElementById('loginForm').submit();
-
 }
