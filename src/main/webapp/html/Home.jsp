@@ -46,6 +46,18 @@
             </form>
         </div>
         <div class="event-page">
+            <c:choose>
+                <c:when test="${requestScope.country==null}">
+                    <p>Search for a specific country or just press Search for the latest occurrences!</p>
+                </c:when>
+                <c:when test="${requestScope.country.equals('world')}">
+                    <p>Showing information for all around the globe!</p>
+                </c:when>
+                <c:otherwise>
+                    <p>Showing information about ${requestScope.country}</p>
+                </c:otherwise>
+            </c:choose>
+
             <%int i=0;%>
             <c:forEach items="${sessionScope.events}" var = "event">
                 <% request.setAttribute("i",i++);%>

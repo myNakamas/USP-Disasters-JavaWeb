@@ -1,6 +1,5 @@
 package dao;
 
-import dao.interfaces.DaoInterface;
 import models.entities.UserCookie;
 import org.hibernate.Session;
 import org.hibernate.Transaction;

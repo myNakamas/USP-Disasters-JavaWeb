@@ -12,7 +12,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -23,9 +22,7 @@ public class HomeServlet extends HttpServlet {
     @Override
     public void init() throws ServletException {
         super.init();
-        //this is absolutely not professional. but its what i know so far.
-        //events = ApiPredictHQ.basicSearch();//new ArrayList<Result>();
-        Session session = HibernateUtil.getSessionFactory().openSession();
+        HibernateUtil.getSessionFactory().openSession();
     }
 
     @Override
@@ -52,11 +49,15 @@ public class HomeServlet extends HttpServlet {
 
 
         String country = request.getParameter("country");
-            if(country.isBlank()) events = ApiPredictHQ.basicSearch();
+            if(country.isBlank()) {
+                events = ApiPredictHQ.basicSearch();
+                request.setAttribute("country","world");
+            }
             else {
                 String countryCode = country.substring(country.indexOf(':') + 1);
                 System.out.println(countryCode);
                 events = ApiPredictHQ.FilteredSearch(countryCode);
+                request.setAttribute("country",country);
             }
 
         doGet(request,response);

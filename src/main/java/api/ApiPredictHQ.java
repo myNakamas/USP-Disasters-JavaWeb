@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.function.Supplier;
 
 public final class ApiPredictHQ {
-
+//todo: oopsieee the access token wore off.. We need a new one or to find a new api/
     private final static String accessToken = "Wal1qLLD4kBMT_TYsryu653IHrC8x7fKyxzQjkFe";
     private static String host = "https://api.predicthq.com/v1/events/";
     private static List<String> parameters= new ArrayList<>();

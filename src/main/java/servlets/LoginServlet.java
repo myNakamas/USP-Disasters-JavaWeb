@@ -10,7 +10,6 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.util.List;
 
 @WebServlet(name = "LoginServlet")
 public class LoginServlet extends HttpServlet {
@@ -89,12 +88,10 @@ public class LoginServlet extends HttpServlet {
 
     static User checkCookie(HttpServletRequest request) {
         User user = null;
-        HttpSession session = request.getSession(false);
         for(Cookie cookie : request.getCookies())
         {
             if(cookie.getName().equals("remember"))
             {
-
                 UserCookieService cookieService = new UserCookieService();
                 user = cookieService.checkCookie(cookie.getValue(),request.getRemoteAddr());
                 break;

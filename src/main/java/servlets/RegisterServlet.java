@@ -1,5 +1,6 @@
 package servlets;
 
+import models.Verification;
 import models.entities.User;
 import services.UserService;
 
@@ -32,12 +33,11 @@ public class RegisterServlet extends HttpServlet {
             if(us.findByUsername(username) != null)throw new Exception("User already exists!");
             if(us.findByEmail(email) != null)throw new Exception("Email is already in use!");
 
-            //TODO: all the verifications
-
+            Verification.checkUsername(username);
+            Verification.checkPass(password);
+            Verification.checkPhone(phone);
 
             User user = new User(username,password,email,phone);
-
-
 
             UserService userService= new UserService();
             userService.persist(user);
