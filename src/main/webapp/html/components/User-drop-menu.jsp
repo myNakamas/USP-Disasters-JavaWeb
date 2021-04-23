@@ -11,6 +11,5 @@
     <div class="dropdown-content">
             <a href="${pageContext.request.contextPath}/ProfileAndSettings">Profile</a>
             <a href="${pageContext.request.contextPath}/Logout">Log out</a>
-<%--        TODO: Add a logout page and add its functionality--%>
     </div>
 </div>

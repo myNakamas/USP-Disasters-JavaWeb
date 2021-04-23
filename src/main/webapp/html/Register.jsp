@@ -30,7 +30,7 @@
                     <label style="display:none;" for="password2">Password2</label>
                     <input class="textbox" name="password2" id="password2" type="password" placeholder="Rewrite the password*">
 
-<%--                    TODO: add Captcha--%>
+<%--                    TODO OPTIONAL: add Captcha--%>
                     <p>The textboxes marked with * are mandatory!</p>
                     <input class="btn vertical-button" type="submit" value="Register">
                 </form>

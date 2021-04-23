@@ -45,6 +45,7 @@ public class HibernateUtil {
 
                 configuration.addAnnotatedClass(User.class);
                 configuration.addAnnotatedClass(UserCookie.class);
+                configuration.addAnnotatedClass(Disaster.class);
 
                 ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
 

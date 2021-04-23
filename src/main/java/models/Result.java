@@ -1,6 +1,7 @@
 package models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import models.entities.Disaster;
 
 import java.util.ArrayList;
 import java.util.Date;
