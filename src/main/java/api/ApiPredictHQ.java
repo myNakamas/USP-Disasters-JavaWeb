@@ -1,9 +1,8 @@
 package api;
 
 import api.handlers.JsonBodyHandler;
-import com.google.protobuf.Api;
-import models.Result;
 import models.Event;
+import models.Result;
 import models.entities.Disaster;
 import services.DisasterService;
 
@@ -15,9 +14,8 @@ import java.net.http.HttpResponse;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Supplier;
-
+@SuppressWarnings("ALL")
 public final class ApiPredictHQ {
-//todo: oopsieee the access token wore off.. We need a new one or to find a new api
     //Client ID
     // 8AYApF_I7Kc
     //secret
@@ -29,26 +27,28 @@ public final class ApiPredictHQ {
     private static List<String> parameters= new ArrayList<>();
     private static String country="";
 
-    public static ArrayList<Result> basicSearch() throws IOException, InterruptedException {
+    public static ArrayList<Result> basicSearch(int offset) throws IOException, InterruptedException {
             parameters = new ArrayList<>();
             parameters.add("category=disasters%2Cterror%2Chealth-warnings");
-            parameters.add("limit=10");
+            parameters.add("limit=20");
+            parameters.add("offset="+offset);
         ApiPredictHQ.country="";
         return search(parameters);
     }
 
 
-    public static ArrayList<Result> FilteredSearch(String countryCode) throws IOException, InterruptedException {
+    public static ArrayList<Result> FilteredSearch(String countryCode, int offset) throws IOException, InterruptedException {
         parameters = new ArrayList<>();
         parameters.add("category=disasters%2Cterror%2Chealth-warnings");
-        parameters.add("limit=10");
+        parameters.add("limit=20");
         parameters.add("country="+countryCode);
+        parameters.add("offset="+offset);
         ApiPredictHQ.country= countryCode;
         return search(parameters);
     }
 
     private static ArrayList<Result> search(List<String> parameters) throws IOException, InterruptedException {
-        host += "?";
+        host  = "https://api.predicthq.com/v1/events/?";
         StringBuilder hostBuilder = new StringBuilder(host);
         for (String x : parameters) {
             hostBuilder.append(x).append("&");

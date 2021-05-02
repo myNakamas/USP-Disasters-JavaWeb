@@ -28,11 +28,18 @@
         </div>
     </nav>
 
+
+    <c:if test="${requestScope.offset==null}">
+        <c:set var="offset" scope="request" value="0"/>
+    </c:if>
+    <c:if test="${requestScope.country==null}">
+        <c:set var="country" scope="request" value=""/>
+    </c:if>
     <div class="vertical">
         <div class="search-bar-container">
             <form method="post">
                 <label>
-                    <input placeholder="Select a country." class="search-box" type="text" list="countries" name="country" />
+                    <input placeholder="Select a country." class="search-box" type="text" list="countries" name="country" value="${requestScope.country}" />
                     <datalist id="countries">
                         <%
                             for(String countryCode : Locale.getISOCountries()){
@@ -41,8 +48,18 @@
                             <option value="<%=locale.getDisplayCountry()+" :"+locale.getCountry()%>"></option>
                         <%}%>
                     </datalist>
+
                 </label>
                 <input class="flex-btn btn" type="submit" value="Search">
+                <input type="hidden" value="${requestScope.offset}" name="offset">
+                <div>
+                    <c:if test="${requestScope.offset>=20}">
+                    <input type="submit" value="Previous" name="previous" class="btn">
+                    </c:if>
+                    <c:if test="${sessionScope.events.size() == 20}">
+                    <input type="submit" value="Next" name="next" class="btn">
+                    </c:if>
+                </div>
             </form>
         </div>
         <div class="event-page">

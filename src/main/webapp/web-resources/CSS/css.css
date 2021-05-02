@@ -207,6 +207,12 @@ h3.event-title {
     border-radius: 10px;
     border: none;
 }
+.combo-box {
+    padding: 0.5vmax 2vmax;
+    background-color: #C4C4C4;
+    border-radius: 10px;
+    border: none;
+}
 .map {
     border-radius: 20px;
     border: dotted 2px var(--primary-color);

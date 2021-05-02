@@ -46,17 +46,28 @@ public class HomeServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         try {
+            String country = request.getParameter("country");
+            String offsetString = request.getParameter("offset");
 
+            int offset;
 
-        String country = request.getParameter("country");
-            if(country.isBlank()) {
-                events = ApiPredictHQ.basicSearch();
+            if(offsetString == null) offset = 0;
+            else offset = Integer.parseInt(offsetString);
+
+            if(request.getParameter("next")!=null) offset+=20;
+            if(request.getParameter("previous")!=null) offset-=20;
+
+            request.setAttribute("offset",offset);
+
+            if(country.isBlank() || country.equals("world")) {
+
+                events = ApiPredictHQ.basicSearch(offset);
                 request.setAttribute("country","world");
             }
             else {
                 String countryCode = country.substring(country.indexOf(':') + 1);
                 System.out.println(countryCode);
-                events = ApiPredictHQ.FilteredSearch(countryCode);
+                events = ApiPredictHQ.FilteredSearch(countryCode,offset);
                 request.setAttribute("country",country);
             }
 
