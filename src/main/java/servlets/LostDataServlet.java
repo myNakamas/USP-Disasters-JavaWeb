@@ -65,7 +65,7 @@ public class LostDataServlet extends HttpServlet {
             else {
                 String subject = "Here is your user data from Disasters Worldwide!";
 
-                String content = "<b>Hi !<b> A request has been sent to retrieve information about your email. If it wasn't from you, please ignore this message." +
+                String content = "Hi ! A request has been sent to retrieve information about your email. If it wasn't from you, please ignore this message." +
                         "\n Note: for security reasons, please change your password after logging in." +
                         "\nUsername: " + u.getUsername() +
                         "\nPassword: " + u.getPassword() + "\n";
