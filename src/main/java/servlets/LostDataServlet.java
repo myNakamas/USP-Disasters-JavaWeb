@@ -70,20 +70,17 @@ public class LostDataServlet extends HttpServlet {
                         "\nUsername: " + u.getUsername() +
                         "\nPassword: " + u.getPassword() + "\n";
                 sendEmail(host, port, email, name, pass, recipient, subject, content);
-                request.setAttribute("success","Your information has been sent. Please check your email.");
-                //Todo: For Marti:  find a way to display those messages on the screen
-
-                //refresh the page
-                doGet(request, response);
+                request.setAttribute("error","Your information has been sent. Please check your email.");
 
             }
         }
         catch (Exception e) {
             e.printStackTrace();
             request.setAttribute("error",e.getMessage());
-            //refresh the page
-            doGet(request, response);
         }
+
+        //refresh the page
+        doGet(request, response);
     }
 
     public static void sendEmail(String host, String port, final String senderEmail, String senderName, final String password,

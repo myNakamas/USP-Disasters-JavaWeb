@@ -30,6 +30,12 @@
             <input class="textbox vertical-button width30per"  name="email" type="email" placeholder="E-mail">
             </label>
             <input type = "submit" class="button" value = "Send username and password ">
+            <c:if test="${requestScope.error != null}">
+                <div class="error-container">
+                    <p>${requestScope.error}</p>
+                    <c:remove var="error" scope="request"/>
+                </div>
+            </c:if>
         </div>
     </form>
 </div>
