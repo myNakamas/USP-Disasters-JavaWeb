@@ -20,15 +20,15 @@
                 <form method="post" action="${pageContext.request.contextPath}/Register">
 
                     <label style="display:none;" for="username">Username</label>
-                    <input class="textbox" name="username" id="username" type="text" placeholder="Username*">
+                    <input class="textbox w-small" name="username" id="username" type="text" placeholder="Username*">
                     <label style="display:none;" for="email">Email</label>
-                    <input class="textbox" name="email" id="email" type="email" placeholder="Email*">
+                    <input class="textbox w-small" name="email" id="email" type="email" placeholder="Email*">
                     <label style="display:none;" for="phone">Phone</label>
-                    <input class="textbox" name="phone" id="phone" type="text" placeholder="Phone">
+                    <input class="textbox w-small" name="phone" id="phone" type="text" placeholder="Phone">
                     <label style="display:none;" for="password">Password</label>
-                    <input class="textbox" name="password" id="password" type="password" placeholder="Password*">
+                    <input class="textbox w-small" name="password" id="password" type="password" placeholder="Password*">
                     <label style="display:none;" for="password2">Password2</label>
-                    <input class="textbox" name="password2" id="password2" type="password" placeholder="Rewrite the password*">
+                    <input class="textbox w-small" name="password2" id="password2" type="password" placeholder="Rewrite the password*">
 
 <%--                    TODO OPTIONAL: add Captcha--%>
                     <p>The textboxes marked with * are mandatory!</p>
