@@ -33,7 +33,7 @@
     <form method="post" action="${pageContext.request.contextPath}/CreateEvent">
         <div class="vertical" style="margin: 0 25%;">
         <input class="textbox w-small" style="margin: 2% 10% 2% 0" name="title" id="title" type="text" placeholder="Title">
-        <input class="textbox w-small"  name="desc" id="desc" type="text" placeholder="Description">
+            <textbox class="textbox w-small"  name="desc" id="desc" placeholder="Description"></textbox>
         <label>
             <input placeholder="Select a country." class="search-box" type="text"  list="countries" name="country" value="${requestScope.country}" />
             <datalist id="countries">
@@ -49,12 +49,7 @@
         <input class="textbox" type="date" id="start" name="start"><br>
         <label for="end" >End  date :</label>
         <input class="textbox" type="date" id="end" name="end" >
-        <!--
-        title, description - za pisane
-        country - padasht list
-        start,end - data ot kalendar
-        location - ot google maps ?? :D
-        -->
+
             <input class="btn vertical-button" type="submit" value="Create Event">
             <c:if test="${requestScope.error != null}">
                 <div class="error-container">

@@ -9,10 +9,21 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import models.entities.User;
 import services.DisasterService;
+import services.UserService;
+import shared.Email;
+
+import java.io.File;
+import java.util.List;
+import java.util.Objects;
+import java.util.Scanner;
 
 @WebServlet(name = "CreateServlet", value = "/CreateServlet")
 public class CreateServlet extends HttpServlet {
+    UserService userService = new UserService();
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("html/CreateDisaster.jsp").forward(request, response);
@@ -25,6 +36,7 @@ public class CreateServlet extends HttpServlet {
         String country = request.getParameter("country");
         String start = request.getParameter("start");
         String end = request.getParameter("end");
+        String category = "disasters";
         String countryCode = "";
 
         try {
@@ -39,8 +51,27 @@ public class CreateServlet extends HttpServlet {
             SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
             Date Start = format.parse(start);
             Date End = format.parse(end);
-            Disaster elem = new Disaster(title, desc, Start, End, countryCode, "not yet lmao");
+
+            File myFile = new File(Objects.requireNonNull(getClass().getClassLoader().getResource("locations.txt")).getFile());
+            Scanner myReader = new Scanner(myFile);
+            String line = " ";
+            while (myReader.hasNextLine() && !line.equals(countryCode)) {
+                line = myReader.nextLine();
+            }
+            line = myReader.nextLine();
+            String loc = line + ",";
+            line = myReader.nextLine();
+            loc = loc + line ;
+
+            Disaster elem = new Disaster(title, desc,category, Start, End, countryCode, loc);
             disasterService.persist(elem);
+            myReader.close();
+
+            List<User> users = userService.findAll();
+            for (User u: users) {
+                Email.sendEmailNewDisaster(u.getEmail(), elem);
+            }
+
             response.sendRedirect(request.getContextPath() + "/");
         }
         catch(Exception e){

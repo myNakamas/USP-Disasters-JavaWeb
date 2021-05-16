@@ -82,6 +82,9 @@ a{
 .w-small {
     width : 15%;
 }
+.w-small {
+    width : 35%;
+}
 
 .btn {
     text-decoration:none;

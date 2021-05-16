@@ -24,9 +24,9 @@
             <div class="align-down-right">
                 <form method="post" action="${pageContext.request.contextPath}/Login" id="loginForm">
                     <label style="display:none;" for="username">Username</label>
-                    <input class="textbox w-small" name="username" id="username" type="text" placeholder="Username">
+                    <input class="textbox w-medium" name="username" id="username" type="text" placeholder="Username">
                     <label style="display:none;" for="password">Password</label>
-                    <input class="textbox w-small" name="password" id="password" type="password" placeholder="Password">
+                    <input class="textbox w-medium" name="password" id="password" type="password" placeholder="Password">
                     <div class="input-checkbox">
                         <input type="checkbox" id="keepLoggedIn" name="keepLoggedIn">
                         <label for="keepLoggedIn">Keep me logged in</label>

@@ -36,9 +36,10 @@ public class Disaster {
         public Disaster() {
         }
 
-    public Disaster(String title, String description,  Date start, Date end, String country, String location) {
+    public Disaster(String title, String description, String category,  Date start, Date end, String country, String location) {
         this.title = title;
         this.description = description;
+        this.category = category;
         this.start = start;
         this.end = end;
         this.country = country;
