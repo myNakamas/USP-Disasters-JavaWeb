@@ -11,5 +11,6 @@
     <div class="dropdown-content">
             <a href="${pageContext.request.contextPath}/ProfileAndSettings">Profile</a>
             <a href="${pageContext.request.contextPath}/Logout">Log out</a>
+            <a href="${pageContext.request.contextPath}/CreateEvent">Create event</a>
     </div>
 </div>
