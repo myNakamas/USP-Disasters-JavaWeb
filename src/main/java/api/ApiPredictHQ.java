@@ -72,7 +72,7 @@ public final class ApiPredictHQ {
             results = new ArrayList<>();
 
             List<Disaster> disasters ;
-            if(country.isBlank()){
+            if(country.isBlank()){  //Todo : Test why when searching the whole world shows bulgaria only. Is it working correctly?
                 disasters =  disasterService.findAll(10);
             }
             else {
