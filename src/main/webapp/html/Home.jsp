@@ -38,6 +38,7 @@
     <div class="vertical">
         <div class="search-bar-container">
             <form method="post">
+                <div>
                 <label>
                     <input placeholder="Select a country." class="search-box" type="text" list="countries" name="country" value="${requestScope.country}" />
                     <datalist id="countries">
@@ -50,6 +51,17 @@
                     </datalist>
 
                 </label>
+                    <div>
+                <label>
+                    <input class="textbox" type="date" name="afterDate" placeholder="After:" />
+                </label>
+                    </div>
+                    <div>
+                <label>
+                    <input class="textbox" type="date" name="beforeDate" placeholder="Before:" />
+                </label>
+                    </div>
+                </div>
                 <input class="flex-btn btn" type="submit" value="Search">
                 <input type="hidden" value="${requestScope.offset}" name="offset">
                 <div>

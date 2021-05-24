@@ -4,6 +4,7 @@ import dao.DisasterDAO;
 import models.entities.Disaster;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class DisasterService {
@@ -74,7 +75,7 @@ public class DisasterService {
         return disasterDao;
     }
 
-    public ArrayList<Disaster> findAllByCountry(String Country) {
+    public List<Disaster> findAllByCountry(String Country) {
         disasterDao.openCurrentSession();
         ArrayList<Disaster> result = new ArrayList<>();
         for(Disaster x : this.findAll(-1))
@@ -84,6 +85,23 @@ public class DisasterService {
                 result.add(x);
             }
         }
+        disasterDao.closeCurrentSession();
+        return result;
+    }
+
+    public List<Disaster> filteredSearch(String countryCode, Date afterDate, Date beforeDate) {
+        disasterDao.openCurrentSession();
+        ArrayList<Disaster> result = new ArrayList<>();
+        List<Disaster> all = new ArrayList<>();
+        if(countryCode.equals("")) all = this.findAll(-1);
+        else all = this.findAllByCountry(countryCode);
+
+        for(Disaster x : all){
+            if(afterDate == null || x.getStart()!=null && afterDate.before(x.getStart()))
+                if(beforeDate == null || x.getStart()!=null && beforeDate.after(x.getStart()))
+                    result.add(x);
+        }
+
         disasterDao.closeCurrentSession();
         return result;
     }

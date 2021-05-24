@@ -12,6 +12,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.function.Supplier;
 @SuppressWarnings("ALL")
@@ -79,9 +80,7 @@ public final class ApiPredictHQ {
                 disasters =  disasterService.findAllByCountry(country);
 
             }
-            for(Disaster d : disasters){
-                results.add(d.getAsResult());
-            }
+            results = convertToResult(disasters);
         }
         else {
 
@@ -95,4 +94,18 @@ public final class ApiPredictHQ {
     }
 
 
+    public static ArrayList<Result> databaseSearch(int offset, String countryCode, Date afterDate, Date beforeDate) {
+        DisasterService disasterService = new DisasterService();
+        var disasters = disasterService.filteredSearch(countryCode,afterDate,beforeDate);
+
+        return convertToResult(disasters);
+    }
+
+    private static ArrayList<Result> convertToResult(List<Disaster> disasters){
+        ArrayList<Result> results = new ArrayList<>();
+        for(Disaster d : disasters){
+            results.add(d.getAsResult());
+        }
+        return results;
+    }
 }
