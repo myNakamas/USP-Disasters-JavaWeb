@@ -60,6 +60,14 @@
         <servlet-name>ProfileServlet</servlet-name>
         <url-pattern>/ProfileAndSettings</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>CreateServlet</servlet-name>
+        <servlet-class>servlets.CreateServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CreateServlet</servlet-name>
+        <url-pattern>/CreateEvent</url-pattern>
+    </servlet-mapping>
 
 <!-- Used for connecting with gmail-->
     <context-param>

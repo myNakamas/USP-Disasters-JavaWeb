@@ -33,10 +33,20 @@ public class Disaster {
     String location;
 
 
-    public Disaster() {
+        public Disaster() {
+        }
+
+    public Disaster(String title, String description, String category,  Date start, Date end, String country, String location) {
+        this.title = title;
+        this.description = description;
+        this.category = category;
+        this.start = start;
+        this.end = end;
+        this.country = country;
+        this.location = location;
     }
 
-        public Result getAsResult()
+    public Result getAsResult()
         {
             Result r = new Result();
             r.setId(DisasterId);

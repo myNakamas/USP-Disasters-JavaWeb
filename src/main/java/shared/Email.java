@@ -53,7 +53,7 @@ public final class Email {
     }
 
 
-    public static void sendEmailNewDisaster(HttpServletRequest request, String recipient, Disaster disaster) throws MessagingException, UnsupportedEncodingException {
+    public static void sendEmailNewDisaster( String recipient, Disaster disaster) throws MessagingException, UnsupportedEncodingException {
         String subject = "WARNING!! New Disaster!";
 
         String content = "A new disaster has been detected! \n" +
@@ -62,7 +62,6 @@ public final class Email {
                 disaster.getDescription() +
                 "More information in here > http://localhost:8080/USP_Disasters_JavaWeb_war_exploded/EventDetails?id="+ disaster.getId();
         sendEmail(host, port, email, name, pass, recipient, subject, content);
-        request.setAttribute("error","Your information has been sent. Please check your email.");
     }
 
     public static void sendEmailLostData(HttpServletRequest request, String recipient, User u) throws MessagingException, UnsupportedEncodingException {
